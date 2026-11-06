@@ -1,0 +1,96 @@
+/* getmarket.fit — стили системы поверх tokens.css.
+   Шрифты: Geologica и Literata с Google Fonts (подстановка, файлов фирменного шрифта нет).
+   Инверсия: .on-accent (синие секции) и .on-ink (чернильные) переопределяют семантические токены. */
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap");
+
+/* Инверсная область: синие секции лендинга и слайдов.
+   Ставится классом на контейнер секции. */
+.on-accent {
+  --text-strong: #FFFFFF;
+  --text-body: #FFFFFF;
+  --text-muted: #F0F2FF;
+  --text-faint: #F0F2FF;
+  --text-accent: #FFFFFF;
+  --surface-page: var(--blue-500);
+  --surface-sunken: var(--blue-600);
+  --surface-card: rgba(255, 255, 255, 0.08);
+  --surface-accent: #FFFFFF;
+  --surface-accent-hover: #F0F2FF;
+  --accent-contrast: var(--blue-600);
+  --surface-accent-soft: rgba(255, 255, 255, 0.12);
+  --border-hairline: rgba(255, 255, 255, 0.24);
+  --border-strong: #FFFFFF;
+  --border-accent: #FFFFFF;
+  --focus-ring: #FFFFFF;
+  color: var(--text-body);
+  background: var(--surface-page);
+}
+
+/* Чернильная область: третий тон системы — тёмные секции лендинга и подвал.
+   Ставится классом на контейнер секции. */
+.on-ink {
+  --text-strong: #FFFFFF;
+  --text-body: var(--ink-100);
+  --text-muted: var(--ink-300);
+  --text-faint: var(--ink-300);
+  --text-accent: var(--blue-400);
+  --surface-page: var(--ink-900);
+  --surface-sunken: #0A0B0C;
+  --surface-card: rgba(255, 255, 255, 0.05);
+  --surface-accent: var(--blue-500);
+  --surface-accent-hover: var(--blue-400);
+  --accent-contrast: #FFFFFF;
+  --surface-accent-soft: rgba(255, 255, 255, 0.07);
+  --border-hairline: rgba(255, 255, 255, 0.18);
+  --border-strong: #FFFFFF;
+  --border-accent: var(--blue-400);
+  --focus-ring: var(--blue-400);
+  color: var(--text-body);
+  background: var(--surface-page);
+}
+
+.on-ink a { color: #FFFFFF; }
+.on-ink a:hover { color: var(--blue-400); }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-text);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tr-tight);
+  line-height: var(--lh-heading);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+p { margin: 0; text-wrap: pretty; }
+
+a {
+  color: var(--text-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+a:hover { color: var(--ink-900); }
+.on-accent a { color: #FFFFFF; }
+.on-accent a:hover { color: rgba(255, 255, 255, 0.72); }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+table { border-collapse: collapse; }

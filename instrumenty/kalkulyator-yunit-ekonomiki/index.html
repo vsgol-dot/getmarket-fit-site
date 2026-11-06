@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор юнит-экономики онлайн-сервиса: допустимый CAC, LTV, окупаемость</title>
+<meta name="description" content="Калькулятор юнит-экономики для подписки и SaaS по цифрам, которые вы знаете: цена, налог, конверсии воронки, продления. Считает маржу, CAC, LTV и допустимую стоимость привлечения клиента.">
+<link rel="canonical" href="https://getmarket.fit/instrumenty/kalkulyator-yunit-ekonomiki/"><meta property="og:site_name" content="getmarket.fit">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор юнит-экономики онлайн-сервиса: допустимый CAC, LTV, окупаемость">
+<meta property="og:description" content="Калькулятор юнит-экономики для подписки и SaaS по цифрам, которые вы знаете: цена, налог, конверсии воронки, продления. Считает маржу, CAC, LTV и допустимую стоимость привлечения клиента.">
+<meta property="og:url" content="https://getmarket.fit/instrumenty/kalkulyator-yunit-ekonomiki/"><meta name="twitter:card" content="summary">
+<meta name="yandex-verification" content="3e13cbe8ddd20a41"><link rel="preload" href="/blog/static/fonts/geologica-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/blog/static/fonts/literata-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/blog/static/blog.css?v=848dc02cff">
+<link rel="alternate" type="application/rss+xml" title="Блог getmarket.fit" href="/blog/feed.xml">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://getmarket.fit/#org",
+   "name": "getmarket.fit",
+   "url": "https://getmarket.fit/",
+   "description": "Продуктовый консалтинг для стартапов с первой выручкой: находим, где теряются пользователи и платежи, и собираем план действий.",
+   "logo": "https://getmarket.fit/blog/static/logo.png",
+   "sameAs": [
+    "https://t.me/marketfit14"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://getmarket.fit/about/victor-golubev/#person",
+   "name": "Виктор Голубев",
+   "jobTitle": "Основатель getmarket.fit, продуктовый консультант",
+   "url": "https://getmarket.fit/about/victor-golubev/",
+   "worksFor": {
+    "@id": "https://getmarket.fit/#org"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/victor-golubev-7610a058/",
+    "https://t.me/vsgol",
+    "https://t.me/marketfit14"
+   ]
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://getmarket.fit/instrumenty/kalkulyator-yunit-ekonomiki/#app",
+   "name": "Калькулятор юнит-экономики онлайн-сервиса",
+   "url": "https://getmarket.fit/instrumenty/kalkulyator-yunit-ekonomiki/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any",
+   "inLanguage": "ru-RU",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": 0,
+    "priceCurrency": "RUB"
+   },
+   "author": {
+    "@id": "https://getmarket.fit/about/victor-golubev/#person"
+   },
+   "publisher": {
+    "@id": "https://getmarket.fit/#org"
+   },
+   "dateModified": "2026-11-04"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Главная",
+     "item": "https://getmarket.fit/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Калькулятор юнит-экономики",
+     "item": "https://getmarket.fit/instrumenty/kalkulyator-yunit-ekonomiki/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Как посчитать юнит-экономику онлайн-сервиса?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нужны цена подписки, затраты на клиента, комиссия и налог - из них считается прибыль с клиента в месяц. Дальше расходы на привлечение и конверсии воронки дают CAC, а доля продлений и отток - срок жизни клиента. LTV = прибыль в месяц × срок жизни, допустимый CAC = LTV / 3."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как рассчитать допустимый CAC?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Разделите LTV на целевое отношение LTV к CAC, обычно на 3. Например, если клиент за всё время приносит 13 500 ₽ прибыли, привлекать его стоит не дороже 4 500 ₽."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Как узнать маржу, если я её не считал?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Возьмите цену подписки, вычтите комиссию за приём платежей, налог с выручки и затраты, которые растут вместе с числом клиентов: серверы, запросы к ИИ, SMS, поддержку. Калькулятор делает это сам."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Какое отношение LTV к CAC считается хорошим?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Распространённый ориентир для подписочного бизнеса - не ниже 3. Меньше 1 означает убыток на каждом клиенте, от 1 до 3 - окупаемость без запаса, больше 5 - часто признак того, что в привлечение вкладывают слишком мало."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Почему окупаемость в калькуляторе дольше, чем CAC / прибыль в месяц?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Простая формула считает, что все привлечённые клиенты платят до момента окупаемости. На деле часть уходит после первого месяца, поэтому калькулятор складывает прибыль с учётом оттока, и срок получается честнее."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Подходит ли калькулятор для маркетплейсов?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Нет. Он рассчитан на сервисы с регулярной оплатой. Юнит-экономика продавца на маркетплейсе считается от единицы товара: себестоимость, комиссия, логистика, возвраты и хранение."
+     }
+    }
+   ]
+  }
+ ]
+}</script><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114067698,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCLWKHR7FQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DCLWKHR7FQ');</script>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/"><span class="logo-get">get</span>marketfit</a>
+    <div class="nav">
+      <nav class="nav-links" aria-label="Разделы">
+        <a href="/blog/">Блог</a>
+        <details class="dd"><summary>Инструменты</summary>
+          <div class="menu"><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
+        </details>
+      </nav>
+      <a class="btn btn-sm" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Экспресс-диагностика</a>
+      <details class="burger"><summary aria-label="Меню"><span></span></summary>
+        <div class="menu"><a href="/blog/">Блог</a><div class="sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Хлебные крошки">
+<a href="/">Главная</a><span aria-hidden="true"> / </span><span aria-current="page">Калькулятор юнит-экономики</span></nav>
+
+  <header class="page-head tool-head">
+    <div class="kicker">Инструмент</div>
+    <h1>Калькулятор юнит-экономики онлайн-сервиса</h1>
+    <p class="lead">Для подписки и SaaS. Введите цену, конверсии и продления - калькулятор посчитает маржу, стоимость привлечения клиента и сколько вы можете на него тратить.</p>
+  </header>
+
+  <div class="tool">
+    <form class="tool-form" id="calc" autocomplete="off" onsubmit="return false">
+      <fieldset class="step">
+        <legend><span class="step-n">1</span>Цена и затраты на клиента</legend>
+        <div class="calc-fields">
+          <label class="field"><span>Цена подписки в месяц, ₽</span>
+            <input name="price" inputmode="decimal" value="1990">
+            <small>Если тарифов несколько - средний платёж платящего клиента</small></label>
+          <label class="field"><span>Затраты на клиента в месяц, ₽</span>
+            <input name="varcost" inputmode="decimal" value="150">
+            <small>Серверы, запросы к ИИ, SMS, поддержка - всё, что растёт вместе с числом клиентов</small></label>
+          <label class="field"><span>Комиссия за приём платежей, %</span>
+            <input name="fee" inputmode="decimal" value="3">
+            <small>Эквайринг или комиссия магазина приложений (там 15-30%)</small></label>
+          <label class="field"><span>Налог с выручки, %</span>
+            <input name="tax" inputmode="decimal" value="6">
+            <small>УСН «доходы» - 6%, самозанятый - 4% или 6%</small></label>
+        </div>
+        <p class="step-sum" id="s-margin"></p>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend><span class="step-n">2</span>Привлечение</legend>
+        <div class="seg" role="radiogroup" aria-label="Как считать стоимость привлечения">
+          <label><input type="radio" name="mode" value="funnel" checked> По воронке</label>
+          <label><input type="radio" name="mode" value="cac"> Знаю CAC</label>
+        </div>
+        <div class="calc-fields" id="funnel">
+          <label class="field"><span>Расходы на привлечение в месяц, ₽</span>
+            <input name="spend" inputmode="decimal" value="150000">
+            <small>Реклама, подрядчики, зарплаты маркетинга и продаж</small></label>
+          <label class="field"><span>Посетителей сайта в месяц</span>
+            <input name="visits" inputmode="decimal" value="5000"></label>
+          <label class="field"><span>Конверсия посетителя в регистрацию, %</span>
+            <input name="cr1" inputmode="decimal" value="3"></label>
+          <label class="field"><span>Конверсия регистрации в оплату, %</span>
+            <input name="cr2" inputmode="decimal" value="10">
+            <small>Доля зарегистрированных, которые хотя бы раз заплатили</small></label>
+        </div>
+        <div class="calc-fields" id="direct" hidden>
+          <label class="field"><span>Стоимость привлечения платящего клиента (CAC), ₽</span>
+            <input name="cac" inputmode="decimal" value="10000"></label>
+        </div>
+        <p class="step-sum" id="s-cac"></p>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend><span class="step-n">3</span>Удержание</legend>
+        <div class="calc-fields">
+          <label class="field"><span>Продлевают после первого месяца, %</span>
+            <input name="r1" inputmode="decimal" value="60">
+            <small>Из тех, кто заплатил первый раз, сколько заплатили второй</small></label>
+          <label class="field"><span>Дальше уходят каждый месяц, %</span>
+            <input name="churn" inputmode="decimal" value="8">
+            <small>Отток среди тех, кто уже продлил. Не знаете - начните с 5-10%</small></label>
+        </div>
+        <p class="step-sum" id="s-life"></p>
+      </fieldset>
+
+      <details class="calc-more">
+        <summary>Настройки расчёта</summary>
+        <div class="calc-fields">
+          <label class="field"><span>Целевое отношение LTV / CAC</span>
+            <input name="target" inputmode="decimal" value="3">
+            <small>Обычный ориентир для подписки - 3: клиент приносит втрое больше, чем стоит</small></label>
+          <label class="field"><span>Считать доход с клиента не дольше, мес.</span>
+            <input name="horizon" inputmode="decimal" value="36">
+            <small>Молодому продукту рискованно рассчитывать на клиента дольше 3 лет</small></label>
+        </div>
+      </details>
+    </form>
+
+    <section class="tool-out" id="result" aria-live="polite" aria-label="Результат расчёта">
+      <div class="out-pair">
+        <div><div class="stat-label">Допустимый CAC</div><div class="out-big" id="o-allowed">-</div></div>
+        <div><div class="stat-label">Ваш CAC</div><div class="out-big" id="o-cac">-</div></div>
+      </div>
+      <div class="out-bar" aria-hidden="true"><span id="o-bar"></span></div>
+      <dl class="out-list">
+        <div><dt>LTV - прибыль с клиента за всё время</dt><dd id="o-ltv">-</dd></div>
+        <div><dt>LTV / CAC</dt><dd id="o-ratio">-</dd></div>
+        <div><dt>Окупаемость с учётом оттока</dt><dd id="o-payback">-</dd></div>
+      </dl>
+      <p class="out-verdict" id="o-verdict"></p>
+      <div id="o-levers"></div>
+      <div class="out-consult" id="o-consult" hidden>
+        <p id="o-consult-text"></p>
+        <a class="btn" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Записаться на экспресс-диагностику</a>
+      </div>
+    </section>
+  </div>
+  <a class="tool-mini" id="mini" href="#result"><span>Допустимый CAC <b id="m-allowed">-</b></span><span>Ваш <b id="m-cac">-</b></span></a>
+
+  <div class="tool-text prose">
+    <h2 id="kak-schitaet">Как считает калькулятор</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Показатель</th><th>Формула</th></tr></thead>
+      <tbody>
+        <tr><td>Прибыль с клиента в месяц</td><td>цена × (1 - комиссия - налог) - затраты на клиента</td></tr>
+        <tr><td>Маржа</td><td>прибыль с клиента в месяц / цена</td></tr>
+        <tr><td>Новые платящие клиенты</td><td>посетители × конверсия в регистрацию × конверсия в оплату</td></tr>
+        <tr><td>CAC</td><td>расходы на привлечение / новые платящие клиенты</td></tr>
+        <tr><td>Срок жизни клиента</td><td>первый месяц + продлившие × сумма месяцев с учётом оттока, не дольше горизонта</td></tr>
+        <tr><td>LTV</td><td>прибыль с клиента в месяц × срок жизни</td></tr>
+        <tr><td>Допустимый CAC</td><td>LTV / целевое LTV к CAC (обычно 3)</td></tr>
+        <tr><td>Окупаемость</td><td>месяц, в котором накопленная прибыль с привлечённых клиентов покрывает CAC</td></tr>
+      </tbody>
+    </table></div>
+    <p>Маржу не нужно знать заранее: её калькулятор считает из цены, комиссии, налога и затрат на клиента. Удержание разделено на два шага, потому что больше всего клиентов уходит после первой оплаты. Если взять один средний отток, срок жизни клиента окажется завышенным.</p>
+    <p>Окупаемость считается с учётом ухода клиентов. Простая формула CAC / прибыль в месяц предполагает, что все привлечённые клиенты платят до момента окупаемости, и обычно занижает срок в 2-3 раза.</p>
+
+    <h2 id="primer">Пример расчёта</h2>
+    <p>Сервис по подписке за 1 990 ₽ в месяц, затраты на клиента 150 ₽, эквайринг 3%, налог 6%. На привлечение уходит 150 000 ₽ в месяц, это даёт 5 000 посетителей. В регистрацию конвертируется 3%, в оплату - 10% зарегистрированных. После первого месяца продлевают 60%, дальше уходят 8% в месяц.</p>
+    <ul>
+      <li>Прибыль с клиента: 1 990 × 0,91 - 150 ≈ 1 660 ₽ в месяц, маржа 83%.</li>
+      <li>Новых платящих: 5 000 × 3% × 10% = 15 клиентов, CAC = 150 000 / 15 = 10 000 ₽.</li>
+      <li>Срок жизни: около 8,1 месяца, LTV ≈ 13 400 ₽.</li>
+      <li>Допустимый CAC при LTV / CAC = 3: около 4 500 ₽. Сейчас привлечение обходится в 2,2 раза дороже.</li>
+      <li>Окупаемость с учётом оттока - 15 месяцев, хотя простая формула дала бы 6.</li>
+    </ul>
+    <p>Что с этим делать: при тех же расходах уложиться в допустимый CAC можно, если поднять конверсию регистрации в оплату с 10% до 22% или найти трафик дешевле 13 ₽ за посетителя. Чаще всего быстрее даёт результат первое: доработать момент первой ценности и путь до оплаты.</p>
+
+    <h2 id="normy">Какие значения считаются нормальными</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>LTV / CAC</th><th>Что это значит</th></tr></thead>
+      <tbody>
+        <tr><td>меньше 1</td><td>каждый новый клиент приносит убыток, масштабировать привлечение нельзя</td></tr>
+        <tr><td>от 1 до 3</td><td>окупается, но запаса почти нет: постоянные расходы и ошибки прогноза съедают прибыль</td></tr>
+        <tr><td>от 3 до 5</td><td>здоровая экономика, можно вкладываться в рост</td></tr>
+        <tr><td>больше 5</td><td>часто признак того, что в привлечение вкладывают слишком мало и рост можно ускорить</td></tr>
+      </tbody>
+    </table></div>
+    <p>LTV / CAC не ниже 3 и окупаемость до 12 месяцев - распространённые ориентиры для подписочного бизнеса. Если денег мало, срок окупаемости важнее: деньги на привлечение нужно вернуть раньше, чем они закончатся.</p>
+
+    <h2 id="oshibki">Частые ошибки в расчёте</h2>
+    <ul>
+      <li><strong>Расходы на привлечение только из рекламного кабинета.</strong> Зарплаты маркетинга и продаж, подрядчики и скидки на первый месяц тоже входят в CAC.</li>
+      <li><strong>Конверсия в оплату от всех пользователей за всё время.</strong> Берите тех, кто зарегистрировался за месяц, и смотрите, сколько из них заплатили.</li>
+      <li><strong>Один отток на всех.</strong> Уход после первой оплаты обычно в разы выше, чем у тех, кто уже продлил.</li>
+      <li><strong>Один CAC на все каналы.</strong> Средний CAC прячет каналы, которые не окупаются. Посчитайте отдельно два-три основных канала.</li>
+    </ul>
+    <p>Если удержание низкое, начать стоит с него: как его измерять - в статьях <a href="/blog/tema/retention/">про удержание</a>.</p>
+
+    <h2 id="marketplejsy">А если я продаю на маркетплейсе?</h2>
+    <p>Этот калькулятор для сервисов с регулярной оплатой. Юнит-экономика продавца на Ozon или Wildberries считается от единицы товара: себестоимость, комиссия площадки, логистика, возвраты, хранение. Отток и срок жизни клиента там не работают, нужен отдельный расчёт.</p>
+
+    <section class="faq" id="faq">
+      <h2>Частые вопросы</h2>
+      <div class="faq-item"><h3>Как посчитать юнит-экономику онлайн-сервиса?</h3><p>Нужны цена подписки, затраты на клиента, комиссия и налог - из них считается прибыль с клиента в месяц. Дальше расходы на привлечение и конверсии воронки дают CAC, а доля продлений и отток - срок жизни клиента. LTV = прибыль в месяц × срок жизни, допустимый CAC = LTV / 3.</p></div>
+      <div class="faq-item"><h3>Как рассчитать допустимый CAC?</h3><p>Разделите LTV на целевое отношение LTV к CAC, обычно на 3. Например, если клиент за всё время приносит 13 500 ₽ прибыли, привлекать его стоит не дороже 4 500 ₽.</p></div>
+      <div class="faq-item"><h3>Как узнать маржу, если я её не считал?</h3><p>Возьмите цену подписки, вычтите комиссию за приём платежей, налог с выручки и затраты, которые растут вместе с числом клиентов: серверы, запросы к ИИ, SMS, поддержку. Калькулятор делает это сам.</p></div>
+      <div class="faq-item"><h3>Какое отношение LTV к CAC считается хорошим?</h3><p>Распространённый ориентир для подписочного бизнеса - не ниже 3. Меньше 1 означает убыток на каждом клиенте, от 1 до 3 - окупаемость без запаса, больше 5 - часто признак того, что в привлечение вкладывают слишком мало.</p></div>
+      <div class="faq-item"><h3>Почему окупаемость в калькуляторе дольше, чем CAC / прибыль в месяц?</h3><p>Простая формула считает, что все привлечённые клиенты платят до момента окупаемости. На деле часть уходит после первого месяца, поэтому калькулятор складывает прибыль с учётом оттока, и срок получается честнее.</p></div>
+      <div class="faq-item"><h3>Подходит ли калькулятор для маркетплейсов?</h3><p>Нет. Он рассчитан на сервисы с регулярной оплатой. Юнит-экономика продавца на маркетплейсе считается от единицы товара: себестоимость, комиссия, логистика, возвраты и хранение.</p></div>
+    </section>
+
+    <aside class="cta">
+  <div>
+    <div class="cta-title">Не растёт и непонятно почему?</div>
+    <p>Бесплатно, 20 минут: обсуждаем ваши метрики, находим узкое место и сразу даём пару идей, что можно изменить. Решение о продолжении всегда ваше.</p>
+  </div>
+  <a class="btn" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Записаться на экспресс-диагностику</a>
+</aside>
+
+  </div>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('calc'),E=f.elements;
+  function num(n){var v=E[n].value.replace(/\s/g,'').replace(',','.');return v===''?NaN:parseFloat(v);}
+  function rub(x){return Math.round(x).toLocaleString('ru-RU')+' ₽';}
+  function one(x){return x.toLocaleString('ru-RU',{maximumFractionDigits:1});}
+  function pct(x){return (x*100).toLocaleString('ru-RU',{maximumFractionDigits:1})+'%';}
+  function mo(x){x=Math.round(x*10)/10;if(x%1)return one(x)+'\u00a0месяца';var n=x%100,d=x%10;
+    return x+' '+(d==1&&n!=11?'месяц':(d>=2&&d<=4&&(n<10||n>=20)?'месяца':'месяцев'));}
+  function $(id){return document.getElementById(id);}
+  function set(id,t){$(id).textContent=t;}
+  function clear(){['o-allowed','o-cac','o-ltv','o-ratio','o-payback'].forEach(function(i){set(i,'-');});
+    $('o-cac').className='out-big';$('o-bar').style.width='0';$('o-levers').innerHTML='';$('o-consult').hidden=true;}
+  var goal=false;
+  function calc(e){
+    var funnel=f.querySelector('input[name=mode]:checked').value==='funnel';
+    $('funnel').hidden=!funnel;$('direct').hidden=funnel;
+    var price=num('price'),vc=num('varcost')||0,fee=(num('fee')||0)/100,tax=(num('tax')||0)/100;
+    var r1=num('r1')/100,c=num('churn')/100,T=num('target')>0?num('target'):3,H=num('horizon')>=1?Math.round(num('horizon')):36;
+    var spend=num('spend'),visits=num('visits'),cr1=num('cr1')/100,cr2=num('cr2')/100;
+    // 1. прибыль с клиента и маржа
+    var gp=price*(1-fee-tax)-vc;
+    if(!(price>0))set('s-margin','Укажите цену подписки.');
+    else if(gp<=0)set('s-margin','Затраты, комиссия и налог съедают всю цену: каждый клиент приносит убыток '+rub(-gp)+' в месяц.');
+    else set('s-margin','Остаётся с клиента: '+rub(gp)+' в месяц, маржа '+pct(gp/price)+'.');
+    // 2. CAC
+    var cac,cpv;
+    if(funnel){
+      if(spend>0&&visits>0&&cr1>0&&cr2>0){var payers=visits*cr1*cr2;cpv=spend/visits;cac=spend/payers;
+        set('s-cac','Новых платящих в месяц: '+one(payers)+'. Посетитель стоит '+rub(cpv)+', платящий клиент - '+rub(cac)+'.');}
+      else{set('s-cac','Заполните расходы, посетителей и обе конверсии.');cac=NaN;}
+    }else{cac=num('cac');set('s-cac','');}
+    // 3. срок жизни: первый месяц + продлившие с ежемесячным оттоком
+    var ok3=r1>=0&&r1<=1&&c>0&&c<=1;
+    var life=ok3?1+r1*(1-Math.pow(1-c,H-1))/c:NaN;
+    set('s-life',ok3?'Клиент платит в среднем '+mo(life)+'.':'Укажите продления (0-100%) и отток (больше 0).');
+    if(!(gp>0&&cac>0&&ok3)){clear();set('o-verdict','Заполните поля - результат появится здесь.');return;}
+    var ltv=gp*life,allowed=ltv/T,ratio=ltv/cac;
+    // окупаемость по когорте: накопленная прибыль на одного привлечённого клиента
+    var cum=0,surv=1,pay=0;
+    for(var m=1;m<=H;m++){cum+=gp*surv;surv=m===1?r1:surv*(1-c);if(cum>=cac){pay=m;break;}}
+    set('m-allowed',rub(allowed));set('m-cac',rub(cac));$('m-cac').className=cac<=allowed?'is-good':'is-bad';
+    set('o-allowed',rub(allowed));set('o-cac',rub(cac));set('o-ltv',rub(ltv));set('o-ratio',one(ratio));
+    set('o-payback',pay?mo(pay):'не окупается за '+mo(H));
+    var good=cac<=allowed;
+    $('o-cac').className='out-big '+(good?'is-good':'is-bad');
+    $('o-bar').style.width=Math.min(100,cac/allowed*100)+'%';$('o-bar').className=good?'is-good':'is-bad';
+    var v;
+    if(ratio<1)v='Каждый новый клиент приносит убыток: привлечение стоит больше, чем клиент принесёт за всё время. Наращивать расходы на рекламу сейчас нельзя.';
+    else if(!good)v='Привлечение окупается, но стоит в '+one(cac/allowed)+' раза дороже допустимого: запаса на постоянные расходы и ошибки прогноза нет.';
+    else if(ratio>T*1.7)v='Клиенты окупаются с большим запасом. Возможно, в привлечение вкладывается слишком мало и расти можно быстрее.';
+    else v='Здоровая юнит-экономика: клиент окупает привлечение с запасом, можно вкладываться в рост.';
+    if(pay===0||pay>12)v+=' Окупаемость дольше года: на рост понадобится много оборотных денег.';
+    set('o-verdict',v);
+    // рычаги: что поменять, чтобы CAC стал допустимым
+    var L=[],k=cac/allowed;
+    if(!good){
+      if(funnel){
+        L.push('посетитель дешевле '+rub(allowed*cr1*cr2)+' (сейчас '+rub(cpv)+')');
+        if(k*cr2<=1)L.push('конверсия регистрации в оплату '+pct(k*cr2)+' (сейчас '+pct(cr2)+')');
+        if(k*cr1<=1)L.push('конверсия посетителя в регистрацию '+pct(k*cr1)+' (сейчас '+pct(cr1)+')');
+      }else L.push('CAC не больше '+rub(allowed));
+      if(1-fee-tax>0)L.push('цена '+rub((gp*k+vc)/(1-fee-tax))+' в месяц при тех же продлениях (сейчас '+rub(price)+')');
+    }
+    // запись на экспресс-диагностику — при любом результате: проблема бывает не только в CAC
+    var ct;
+    if(!good)ct='Разберём на бесплатной экспресс-диагностике, какой из вариантов реалистичнее для вашего продукта и с чего начать.';
+    else if(allowed/cac>=1.3)ct='Поздравляем: экономика сходится. Судя по цифрам, у вас есть запас для роста: на привлечение клиента можно тратить до '
+      +rub(allowed)+' - в '+one(allowed/cac)+' раза больше, чем сейчас. На бесплатной экспресс-диагностике покажем, куда направить этот запас: каналы, конверсия, удержание.';
+    else ct='Поздравляем: экономика сходится, но запас небольшой. На бесплатной экспресс-диагностике найдём, что сейчас ограничивает рост: конверсия, удержание или каналы.';
+    if(r1<0.5)ct+=' После первого месяца уходит больше половины клиентов - обычно начинать стоит с удержания.';
+    set('o-consult-text',ct);
+    $('o-consult').hidden=false;
+    $('o-levers').innerHTML=L.length?'<div class="stat-label">Чтобы уложиться в допустимый CAC, достаточно одного:</div><ul>'
+      +L.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'';
+    if(!goal&&e){goal=true;
+try{ym(114067698,'reachGoal','calc');}catch(_){}try{gtag('event','calc',{page_path:location.pathname});}catch(_){}}
+  }
+  f.addEventListener('input',calc);f.addEventListener('change',calc);calc();
+  // на телефоне результат внизу: мини-плашка видна, пока сам блок результата за экраном
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){$('mini').classList.toggle('is-hidden',es[0].isIntersecting||es[0].boundingClientRect.top<0);}).observe($('result'));
+})();
+</script>
+</main>
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div>© 2026 getmarket.fit — продуктовый консалтинг для стартапов</div>
+    <nav aria-label="Ссылки в подвале">
+      <a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/about/produktovyj-konsultant/">Услуги</a> · <a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a> · <a href="/about/victor-golubev/">Об авторе</a> · <a href="/blog/feed.xml">RSS</a> · <a href="/about/privacy/">Конфиденциальность</a>
+    </nav>
+  </div>
+</footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var g=a.getAttribute('data-goal')||(a.href.indexOf('https://mcp.getmarket.fit/')===0?'mcp':null);if(!g)return;
+ym(114067698,'reachGoal',g);gtag('event',g,{page_path:location.pathname});});
+var sent=false;window.addEventListener('scroll',function(){if(sent)return;var h=document.documentElement;if((h.scrollTop+innerHeight)/h.scrollHeight>0.75){sent=true;
+ym(114067698,'reachGoal','read75');gtag('event','read75');}},{passive:true});
+</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('.nav details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.nav details[open]').forEach(function(d){d.removeAttribute('open')})});</script>
+</body>
+</html>

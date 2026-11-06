@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>getmarket.fit — marketfit для продуктов с выручкой</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/gmf/components/bundle.css">
+<script src="ds/gmf/components/lib/lucide.min.js"></script>
+<script src="ds/gmf/components/bundle.js"></script>
+<!-- GMF-BLOG:head -->
+<meta name="description" content="Продуктовый консалтинг для стартапов с первой выручкой: находим, где теряются пользователи и платежи, и собираем план роста. Бесплатная экспресс-диагностика 20 минут.">
+<link rel="canonical" href="https://getmarket.fit/">
+<meta property="og:site_name" content="getmarket.fit">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:type" content="website">
+<meta property="og:title" content="getmarket.fit | marketfit для продуктов с выручкой">
+<meta property="og:description" content="Нет роста? Покажем, где теряются деньги и как это исправить. Экспресс-диагностика, консультация, анализ продукта и плана роста, продуктовое сопровождение.">
+<meta property="og:url" content="https://getmarket.fit/">
+<link rel="alternate" type="application/rss+xml" title="Блог getmarket.fit" href="/blog/feed.xml">
+<meta name="yandex-verification" content="3e13cbe8ddd20a41">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://getmarket.fit/#org", "name": "getmarket.fit", "url": "https://getmarket.fit/", "description": "Продуктовый консалтинг для стартапов с первой выручкой: находим, где теряются пользователи и платежи, и собираем план действий.", "founder": {"@id": "https://getmarket.fit/about/victor-golubev/#person"}}, {"@type": "WebSite", "@id": "https://getmarket.fit/#site", "url": "https://getmarket.fit/", "name": "getmarket.fit", "inLanguage": "ru-RU", "publisher": {"@id": "https://getmarket.fit/#org"}}, {"@type": "ProfessionalService", "@id": "https://getmarket.fit/#service", "name": "getmarket.fit", "url": "https://getmarket.fit/", "areaServed": "RU", "provider": {"@id": "https://getmarket.fit/#org"}, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Услуги", "itemListElement": [{"@type": "Offer", "name": "Экспресс-диагностика", "description": "20 минут: находим узкое место в метриках и даём пару идей, что изменить.", "price": "0", "priceCurrency": "RUB"}, {"@type": "Offer", "name": "Консультация", "description": "Час созвона по вашему вопросу и рекомендации на 2 недели.", "price": "10000", "priceCurrency": "RUB"}, {"@type": "Offer", "name": "Анализ продукта и плана роста", "description": "Разбор метрик и продукта, документ с диагнозом и планом на 2-3 месяца.", "price": "50000", "priceCurrency": "RUB"}, {"@type": "Offer", "name": "Продуктовое сопровождение", "description": "Еженедельная работа: встречи, разбор метрик, корректировка курса.", "price": "75000", "priceCurrency": "RUB"}, {"@type": "Offer", "name": "Продуктовая команда по подписке", "description": "CPO и продуктовые исполнители.", "price": "175000", "priceCurrency": "RUB"}, {"@type": "Offer", "name": "Стратегия и исследования", "description": "Стратегия продукта и выхода на рынок, интервью клиентов, анализ конкурентов, проверка спроса. Цена под задачу."}]}}]}</script>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114067698,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/114067698" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCLWKHR7FQ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DCLWKHR7FQ');</script>
+<script>(function(){
+function goal(g){try{ym(114067698,'reachGoal',g)}catch(e){}try{gtag('event',g)}catch(e){}}
+var f=window.fetch;window.fetch=function(u){var p=f.apply(this,arguments);
+if(String(u).indexOf('send.ashx')>-1){p.then(function(r){return r.clone().json()}).then(function(d){if(d&&(d.success===true||d.success==='true'))goal('lead')}).catch(function(){})}
+return p};
+document.addEventListener('click',function(e){var b=e.target.closest('button,a');if(!b)return;
+if(/[Ээ]кспресс-диагностик/.test(b.textContent||'')||(b.href&&b.href.indexOf('calendar.app.google')>-1))goal('consult');
+if(b.href&&b.href.indexOf('https://mcp.getmarket.fit/')===0)goal('mcp');if(b.getAttribute('data-goal'))goal(b.getAttribute('data-goal'))},true);
+if(/consult/.test(location.hash)||/[?&]apply=1/.test(location.search)){location.replace('https://calendar.app.google/DZBxhLjkDBSUq25a7')}
+})();</script>
+<style>
+.gmf-nav{display:flex;align-items:center;gap:var(--sp-5)}
+.gmf-links{display:flex;align-items:center;gap:var(--sp-5)}
+.gmf-links>a,.gmf-dd>summary{font-family:var(--font-ui);font-weight:500;font-size:15px;color:var(--ink-900);text-decoration:none;cursor:pointer}
+.gmf-dd,.gmf-burger{position:relative}
+.gmf-dd>summary,.gmf-burger>summary{list-style:none;display:flex;align-items:center;gap:6px;min-height:40px}
+.gmf-dd>summary::-webkit-details-marker,.gmf-burger>summary::-webkit-details-marker{display:none}
+.gmf-dd>summary:after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.gmf-dd[open]>summary:after{transform:translateY(2px) rotate(-135deg)}
+.gmf-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:260px;background:#fff;border:1px solid var(--border-hairline);border-radius:8px;box-shadow:0 12px 32px rgba(17,18,20,.12);padding:6px;display:flex;flex-direction:column;z-index:40}
+.gmf-dd .gmf-menu{left:-12px;right:auto}
+.gmf-menu a{display:block;white-space:nowrap;padding:10px 12px;border-radius:6px;font-family:var(--font-ui);font-size:15px;color:var(--ink-900);text-decoration:none}
+.gmf-menu a:hover,.gmf-menu a:focus-visible{background:var(--blue-050)}
+.gmf-menu .gmf-sep{height:1px;background:var(--border-hairline);margin:4px 6px}
+.gmf-burger{display:none}
+.gmf-burger>summary{width:40px;justify-content:center;cursor:pointer;border-radius:8px}
+.gmf-burger>summary span,.gmf-burger>summary span:before,.gmf-burger>summary span:after{display:block;width:18px;height:2px;background:var(--ink-900);border-radius:1px;position:relative;content:""}
+.gmf-burger>summary span:before{position:absolute;top:-6px}.gmf-burger>summary span:after{position:absolute;top:6px}
+.gmf-nav summary:focus-visible,.gmf-links>a:focus-visible{outline:2px solid var(--blue-500);outline-offset:2px;border-radius:4px}
+@media (max-width:760px){.gmf-links{display:none}.gmf-burger{display:block}.gmf-nav{gap:var(--sp-3)}}
+</style>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){d.removeAttribute('open')})});</script>
+<!-- /GMF-BLOG:head -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&amp;family=JetBrains+Mono:wght@400&amp;display=swap">
+<style>
+:root{
+--blue-600:#2C41E8;--blue-500:#415AFE;--blue-400:#6C7FFF;--blue-200:#C3CBFF;--blue-100:#E5E9FF;--blue-050:#F2F4FF;
+--ink-900:#111214;--ink-700:#3A3E45;--ink-500:#6B7078;--ink-400:#8E949C;--ink-300:#B9BEC5;--ink-200:#DDE0E4;--ink-100:#ECEEF1;
+--paper:#FFFFFF;--paper-2:#F7F8FA;--paper-3:#F1F3F6;
+--green-600:#1B7A4F;--green-100:#E6F4EC;--amber-600:#8A5A00;--amber-100:#FBF1DC;--red-600:#B02418;--red-100:#FBE9E7;
+--text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-faint:var(--ink-500);--text-accent:var(--blue-600);
+--text-on-accent:#FFFFFF;--text-on-accent-muted:rgba(255,255,255,0.72);
+--surface-page:var(--paper);--surface-sunken:var(--paper-2);--surface-card:var(--paper);--surface-accent:var(--blue-500);--surface-accent-hover:var(--blue-600);
+--accent-contrast:#FFFFFF;--surface-accent-soft:var(--blue-050);--surface-ink:var(--ink-900);
+--border-hairline:var(--ink-200);--border-strong:var(--ink-900);--border-accent:var(--blue-500);--border-on-accent:rgba(255,255,255,0.28);--focus-ring:var(--blue-500);
+--font-display:"Geologica","Helvetica Neue",Helvetica,Arial,sans-serif;--font-ui:"Geologica","Helvetica Neue",Helvetica,Arial,sans-serif;--font-text:"Literata",Georgia,"Times New Roman",serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-20:20px;--fs-24:24px;--fs-30:30px;--fs-38:38px;--fs-48:48px;--fs-60:60px;--fs-76:76px;
+--fw-light:300;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;
+--lh-tight:1.06;--lh-heading:1.16;--lh-snug:1.35;--lh-body:1.62;--lh-loose:1.75;
+--tr-tightest:-0.03em;--tr-tight:-0.018em;--tr-normal:0;--tr-label:0.08em;--tr-label-wide:0.14em;
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:40px;--sp-8:56px;--sp-9:72px;--sp-10:96px;--sp-11:128px;--sp-12:160px;
+--section-y:128px;--section-y-compact:72px;--gutter:32px;
+--radius-0:0px;--radius-1:3px;--radius-2:6px;--radius-3:10px;--radius-pill:999px;
+--shadow-none:none;--shadow-pop:0 8px 24px -8px rgba(17,18,20,0.18),0 1px 2px rgba(17,18,20,0.06);--shadow-modal:0 32px 64px -24px rgba(17,18,20,0.28);
+--measure-text:68ch;--measure-lead:46ch;--container:1120px;--container-narrow:760px;
+--bw-hairline:1px;--bw-strong:2px;
+--dur-fast:120ms;--dur-base:180ms;--dur-slow:320ms;--ease-standard:cubic-bezier(0.2,0,0.2,1);--ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+body{margin:0;background:#FFFFFF}
+a{color:#2C41E8}a:hover{color:#111214}
+@media (max-width: 720px){:root{--section-y:80px;--section-y-compact:56px;--gutter:20px}}
+</style>
+</helmet>
+<div style="width: 100%; font-family: var(--font-text); color: var(--text-body); background: var(--paper);">
+
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid var(--border-hairline);">
+<div style="max-width: var(--container); margin: 0 auto; padding: 14px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5);">
+<a href="#top" aria-label="getmarket.fit, наверх" style="text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.03em; line-height: 1; color: var(--ink-900);"><span style="color: var(--blue-500);">get</span>marketfit</a>
+<!-- GMF-BLOG:nav --><div class="gmf-nav"><nav class="gmf-links" aria-label="Разделы"><a href="/blog/">Блог</a><details class="gmf-dd"><summary>Инструменты</summary><div class="gmf-menu"><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div></details></nav><x-import component-from-global-scope="GMF.Button" size="sm" on-click="{{openApply}}">Экспресс-диагностика</x-import><details class="gmf-burger"><summary aria-label="Меню"><span></span></summary><div class="gmf-menu"><a href="/blog/">Блог</a><div class="gmf-sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div></details></div>
+</div>
+</header>
+
+<section id="top" class="on-accent" style="background: var(--blue-500); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto; display: flex; flex-wrap: wrap; gap: var(--sp-8) 64px; align-items: center;">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; align-items: flex-start;">
+<h1 style="margin: 0; font-family: var(--font-display); font-size: clamp(38px, 4.2vw, 60px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;"><strong>Нет роста? Покажем, где теряются деньги и как это исправить</strong></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #FFFFFF; max-width: 46ch;">Смотрим весь путь клиента: от первого захода на сайт до повторной оплаты. Находим узкое место и собираем план, который ваша команда сможет выполнить.</p>
+<div style="display: flex; flex-direction: column; gap: var(--sp-3); align-items: flex-start;">
+<x-import component-from-global-scope="GMF.Button" size="lg" icon="arrow-right" on-click="{{openApply}}">Записаться на экспресс-диагностику</x-import>
+<x-import component-from-global-scope="GMF.PriceLine" price="Бесплатно, 20 минут." note="Скажем, где проблема и какой формат работы вам нужен."></x-import>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 400px; min-width: 0; max-width: 500px; display: flex; flex-direction: column; gap: 36px;">
+<div style="{{colStyle}}">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="7">
+<sc-if value="{{it.isRow}}" hint-placeholder-val="{{yes}}">
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="{{it.labelStyle}}"><span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em;">{{it.label}}</span><span style="{{it.countStyle}}">{{it.count}}</span></div>
+<div style="{{it.barStyle}}"></div>
+</div>
+</sc-if>
+<sc-if value="{{it.isGap}}" hint-placeholder-val="{{no}}">
+<div style="position: relative; height: 56px; margin-left: 8px;">
+<div style="{{it.lineStyle}}"></div>
+<div style="{{it.noteStyle}}">
+<span style="font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #2C41E8; background: #FFFFFF; border-radius: 3px; padding: 4px 8px;">Узкое место</span>
+<span style="font-family: var(--font-ui); font-size: 15px; font-weight: 500; color: #FFFFFF;">{{it.text}}</span>
+</div>
+</div>
+</sc-if>
+</sc-for>
+</div>
+<div style="display: flex; gap: 8px; align-items: center;">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<span style="{{d.style}}"></span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="01">С какими задачами мы работаем</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-6); margin-top: var(--sp-7);">
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Трафик есть,&nbsp; регистраций нет</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">Посетители смотрят и уходят. Меняете тексты и офферы, конверсия в регистрацию не двигается.</p>
+</div>
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Регистрируются, но не пользуются</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">Люди создают аккаунт и исчезают. Внутри продукта ничего не пробуют, не возвращаются.</p>
+</div>
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Пользуются, но не платят</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">Активные пользователи есть, платящих почти нет. Бесплатным пользуются охотно, до оплаты не доходят.</p>
+</div>
+</div><!-- GMF-BLOG:calc --><div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-3) var(--sp-6); margin-top: var(--sp-6); padding: var(--sp-5) var(--sp-6); border-radius: 6px; background: var(--blue-050); border: 1px solid var(--blue-100);"><span style="font-size: 16px; line-height: 1.55; color: var(--ink-900); max-width: 62ch;"><b style="font-family: var(--font-display); font-weight: 600;">Не знаете свои цифры?</b> Узнайте свои основные метрики и где могут быть проблемы.</span><a href="/instrumenty/kalkulyator-yunit-ekonomiki/?utm_source=landing&amp;utm_medium=problems" data-goal="calc_open" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 6px; background: var(--blue-500); color: #FFFFFF; font-family: var(--font-ui); font-size: 15px; font-weight: 500; white-space: nowrap; text-decoration: none;">Открыть калькулятор →</a></div>
+</div>
+</section>
+
+<section class="on-ink" style="background: var(--ink-900); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="02">Что мы делаем</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: var(--sp-5); margin-top: var(--sp-7);">
+<div style="grid-column: 1 / -1; border: 1px solid var(--blue-400); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(65,90,254,0.12);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; background: var(--blue-500); border-radius: 3px; padding: 4px 8px;">Точка входа</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Экспресс-диагностика · 20 минут</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: var(--blue-400); white-space: nowrap;">Бесплатно</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100); max-width: 80ch;">Короткий созвон по вашим метрикам: находим узкое место и что можно изменить, сразу даём пару идей и предлагаем формат дальнейшей работы.</p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">1 час</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Консультация</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">10 000 ₽</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Один час созвона по вашему конкретному вопросу плюс рекомендации на 2 недели в виде одной страницы.</p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">4 рабочих дня</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Анализ продукта и плана роста</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">от 50 000 ₽</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Системный разбор для случаев, когда непонятно, где именно проблема. Анализируем ваши метрики и продукт, выдаём документ с диагнозом, приоритетами и планом действий на 2-3 месяца. Срок 4 рабочих дня.</p>
+<p style="margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--ink-300);"><br></p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Еженедельно</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Продуктовое сопровождение</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">75 000 ₽/мес</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Для команд, где нужно внешнее стратегическое мнение. Еженедельная работа: встречи, разбор метрик, оценка результата, корректировка курса. Строим систему для вашего масштабирования.</p>
+
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Head of Product + команда</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Продуктовая команда по подписке</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">175 000 ₽/мес</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Для команд, где нужна не только стратегия, но и руки. CPO плюс продуктовые исполнители с проверенной эффективной методологией.</p>
+
+</div>
+<div style="grid-column: 1 / -1; border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Под задачу</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Стратегия и исследования</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; white-space: nowrap;">По запросу</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100); max-width: 80ch;">Стратегия продукта и выхода на рынок, исследования с интервью клиентов, анализ конкурентов, проверка спроса перед запуском. Объём и цену определяем на экспресс-диагностике.</p>
+</div>
+</div>
+<div style="margin-top: var(--sp-7); display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center;">
+<x-import component-from-global-scope="GMF.Button" icon="arrow-right" on-click="{{openApply}}">Записаться на экспресс-диагностику</x-import>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper-2); padding: var(--section-y-compact) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="03">Как это проходит</x-import>
+<p style="margin: var(--sp-6) 0 0; font-size: 20px; line-height: 1.5; color: var(--ink-900); max-width: 60ch;">Начинаем с бесплатной экспресс-диагностики на 20 минут: обсуждаем ваши метрики, находим узкое место и сразу даём пару идей, что можно изменить. Дальше предлагаем формат работы: консультация, анализ продукта и плана роста или сопровождение. Решение всегда ваше.</p>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y-compact) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-5);">
+<x-import component-from-global-scope="GMF.SectionLabel" number="04">Чего мы не делаем</x-import>
+<ul style="list-style: none; margin: var(--sp-2) 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-hairline);">
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">Не заменяем вам доменную экспертизу, она должна быть в команде</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">Не делаем дизайн</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">Не запускаем рекламу и не настраиваем кабинеты</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">Не заменяем вашу команду целиком</span></li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-500);">При необходимости поможем вам найти исполнителей.</p>
+</div>
+</section>
+
+<section class="on-ink" style="background: var(--ink-900); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+
+<x-import component-from-global-scope="GMF.SectionLabel" number="05">Кейсы</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-5); margin-top: var(--sp-7);">
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums;">×1,7</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">конверсия регистрации</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">B2C-сервис маршрутов для активного отдыха</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Задача</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Конверсия посетитель → регистрация ниже окупаемости трафика.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Что сделали</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Пересобрали первый экран и ценностное предложение, сузили сегмент.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Результат</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">Конверсия регистрации выросла в 1,7 раза.</p></div>
+</article>
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;">Первые</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">платящие пользователи</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">B2B ИИ-сервис для команд продаж</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Задача</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">MVP запущен, платящих нет, непонятно позиционирование.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Что сделали</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Пересобрали позиционирование, определили ICP, перезапустили продукт под сегмент.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Результат</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">Пришли первые платящие пользователи.</p></div>
+</article>
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums;">20 → 45%</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">конверсия пилота</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">Платформа для рекрутеров</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Задача</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Конверсия пилота держалась на 20%.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Что сделали</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Пересобрали структуру пилота, поменяли момент первой ценности, докрутили онбординг.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Результат</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">Конверсия пилота выросла с 20% до 45%.</p></div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y) var(--gutter); position: relative">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="06">Кто за этим стоит</x-import>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-8); margin-top: var(--sp-7); align-items: flex-start; position: relative">
+<div style="box-sizing: border-box; display: flex; flex-direction: column; width: 363px; max-width: 100%; height: 520px; border-radius: 8px; position: static; background: url(&quot;./assets/5b10830cadb542574368401bb67230a0.webp&quot;) center / cover no-repeat"></div>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: var(--sp-5);">
+<h2 style="margin: 0; font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 48px); font-weight: 600; line-height: 1.16; letter-spacing: -0.03em; color: var(--ink-900); max-width: 22ch">Виктор Голубев, 12 лет опыта запуска стартапов</h2>
+<div style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700); max-width: 68ch;"><p node="[object Object]" class=""><span style="animation: 0.2s ease-out 15ms 1 normal both running fade-in">Был </span><span style="animation: 0.2s ease-out 28ms 1 normal both running fade-in">CPO и CMO&nbsp;</span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">в </span><span style="animation: 0.2s ease-out 55ms 1 normal both running fade-in">найме, </span><span style="animation: 0.2s ease-out 16ms 1 normal both running fade-in">кофаундером, руководил внутренним корпоративным продуктовым акселератором</span><span style="animation: 0.2s ease-out 54ms 1 normal both running fade-in">.</span></p>
+  <p node="[object Object]" class=""><span style="animation: 0.2s ease-out 18ms 1 normal both running fade-in">В </span><span style="animation: 0.2s ease-out 34ms 1 normal both running fade-in">inDrive </span><span style="animation: 0.2s ease-out 51ms 1 normal both running fade-in">запускал </span><span style="animation: 0.2s ease-out 17ms 1 normal both running fade-in">новые </span><span style="animation: 0.2s ease-out 29ms 1 normal both running fade-in">направления </span><span style="animation: 0.2s ease-out 42ms 1 normal both running fade-in">по </span><span style="animation: 0.2s ease-out 54ms 1 normal both running fade-in">всему </span><span style="animation: 0.2s ease-out 15ms 1 normal both running fade-in">миру: </span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">маркетплейсы </span><span style="animation: 0.2s ease-out 19ms 1 normal both running fade-in">в </span><span style="animation: 0.2s ease-out 16ms 1 normal both running fade-in">Латинской </span><span style="animation: 0.2s ease-out 33ms 1 normal both running fade-in">Америке, Азии и Африке</span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">. </span><span style="animation: 0.2s ease-out 19ms 1 normal both running fade-in">В </span><span style="animation: 0.2s ease-out 43ms 1 normal both running fade-in">Уганде </span><span style="animation: 0.2s ease-out 17ms 1 normal both running fade-in">руководил </span><span style="animation: 0.2s ease-out 42ms 1 normal both running fade-in">запуском </span><span style="animation: 0.2s ease-out 15ms 1 normal both running fade-in">государственных </span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">сервисов</span><span style="animation: 0.2s ease-out 18ms 1 normal both running fade-in">. </span><span style="animation: 0.2s ease-out 34ms 1 normal both running fade-in">В </span><span style="animation: 0.2s ease-out 50ms 1 normal both running fade-in">Университете </span><span style="animation: 0.2s ease-out 14ms 1 normal both running fade-in">2035 </span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">отвечал </span><span style="animation: 0.2s ease-out 20ms 1 normal both running fade-in">за </span><span style="animation: 0.2s ease-out 35ms 1 normal both running fade-in">платформы </span><span style="animation: 0.2s ease-out 51ms 1 normal both running fade-in">с </span><span style="animation: 0.2s ease-out 0ms 1 normal both running fade-in">500&nbsp;</span><span style="animation: 0.2s ease-out 24ms 1 normal both running fade-in">000 </span><span style="animation: 0.2s ease-out 49ms 1 normal both running fade-in">обучающимися.</span></p>
+  <p node="[object Object]" class=""><span style="animation: 0.2s ease-out 1ms 1 normal both running fade-in">Основал </span><span style="animation: 0.2s ease-out 36ms 1 normal both running fade-in">и </span><span style="animation: 0.2s ease-out 15ms 1 normal both running fade-in">пять </span><span style="animation: 0.2s ease-out 0ms 1 normal both running fade-in">лет </span><span style="animation: 0.2s ease-out 14ms 1 normal both running fade-in">развивал </span><span style="animation: 0.2s ease-out 0ms 1 normal both running fade-in">B2B </span><span style="animation: 0.2s ease-out 31ms 1 normal both running fade-in">SaaS. </span><span style="animation: 0.2s ease-out 3ms 1 normal both running fade-in">Без </span><span style="animation: 0.2s ease-out 17ms 1 normal both running fade-in">инвестиций, </span><span style="animation: 0.2s ease-out 39ms 1 normal both running fade-in">бутстрепом, </span><span style="animation: 0.2s ease-out 0ms 1 normal both running fade-in">довели </span><span style="animation: 0.2s ease-out 23ms 1 normal both running fade-in">до </span><span style="animation: 0.2s ease-out 40ms 1 normal both running fade-in">1000 </span><span style="animation: 0.2s ease-out 57ms 1 normal both running fade-in">MAU </span><span style="animation: 0.2s ease-out 74ms 1 normal both running fade-in">и </span><span style="animation: 0.2s ease-out 34ms 1 normal both running fade-in">устойчивой </span><span style="animation: 0.2s ease-out 0ms 1 normal both running fade-in">монетизации.</span></p>
+  <p node="[object Object]" class=""><span style="animation: 0.2s ease-out 69ms 1 normal both running fade-in">Разные </span><span style="animation: 0.2s ease-out 46ms 1 normal both running fade-in">ниши, </span><span style="animation: 0.2s ease-out 75ms 1 normal both running fade-in">разные </span><span style="animation: 0.2s ease-out 41ms 1 normal both running fade-in">масштабы, </span><span style="animation: 0.2s ease-out 69ms 1 normal both running fade-in">одни </span><span style="animation: 0.2s ease-out 50ms 1 normal both running fade-in">и </span><span style="animation: 0.2s ease-out 59ms 1 normal both running fade-in">те </span><span style="animation: 0.2s ease-out 68ms 1 normal both running fade-in">же </span><span style="animation: 0.2s ease-out 78ms 1 normal both running fade-in">задачи: </span><span style="animation: 0.2s ease-out 34ms 1 normal both running fade-in">от </span><span style="animation: 0.2s ease-out 46ms 1 normal both running fade-in">нуля </span><span style="animation: 0.2s ease-out 58ms 1 normal both running fade-in">до </span><span style="animation: 0.2s ease-out 70ms 1 normal both running fade-in">первых </span><span style="animation: 0.2s ease-out 23ms 1 normal both running fade-in">пользователей, </span><span style="animation: 0.2s ease-out 54ms 1 normal both running fade-in">&nbsp;</span><span style="animation: 0.2s ease-out 27ms 1 normal both running fade-in">поиск </span><span style="animation: 0.2s ease-out 38ms 1 normal both running fade-in">маркетфита&nbsp;</span><span style="animation: 0.2s ease-out 50ms 1 normal both running fade-in">в </span><span style="animation: 0.2s ease-out 62ms 1 normal both running fade-in">условиях </span><span style="animation: 0.2s ease-out 28ms 1 normal both running fade-in">неопределённости.</span></p></div>
+
+<div style="height: 1px; background: var(--border-hairline);"></div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-5); align-items: flex-start;">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: var(--blue-600); font-variant-numeric: tabular-nums;">100+</span>
+<p style="flex: 1 1 280px; min-width: 0; margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700); max-width: 52ch;">Через нас прошло больше 100 стартапов за последний год. Знаем чем сейчас живет рынок и что нужно делать чтобы сдвинуться с места.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper-2); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="07">Частые вопросы</x-import>
+<div style="margin-top: var(--sp-7);">
+<x-import component-from-global-scope="GMF.Accordion" items="{{faq}}" default-open="{{zero}}"></x-import>
+</div>
+</div>
+</section>
+
+<section class="on-accent" style="background: var(--blue-500); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-6); align-items: center; text-align: center;">
+<h2 style="margin: 0; font-family: var(--font-display); font-size: clamp(38px, 4.4vw, 60px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;">Как связаться</h2>
+<x-import component-from-global-scope="GMF.Button" size="lg" icon="arrow-right" on-click="{{openApply}}">Записаться на экспресс-диагностику</x-import>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF; max-width: 46ch;">Или напишите в Telegram: <a href="https://t.me/vsgol" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255)">@vsgol</a>, если есть вопросы.</p><!-- GMF-BLOG:audit --><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF; max-width: 46ch;">Не готовы к созвону? Пришлите сайт на <a href="/instrumenty/audit-lendinga/?utm_source=landing&amp;utm_medium=contacts" data-goal="audit_page" style="color: rgb(255, 255, 255);">бесплатный разбор лендинга</a> - за час покажем, почему посетители уходят.</p>
+</div>
+</section>
+
+<footer class="on-ink" style="background: var(--ink-900); padding: var(--sp-8) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-2); font-family: var(--font-ui); font-size: 14px; line-height: 1.6; color: var(--ink-300);"><span style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.03em; line-height: 1.2; color: rgb(255, 255, 255)">getmarket<span style="color: var(--blue-400)">fit</span></span><!-- GMF-BLOG:foot --><nav aria-label="Разделы" style="display: flex; flex-wrap: wrap; gap: var(--sp-4);"><a href="/blog/" style="color: var(--ink-300);">Блог</a><a href="/about/produktovyj-konsultant/" style="color: var(--ink-300);">Услуги</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/" style="color: var(--ink-300);">Калькулятор юнит-экономики</a><a href="/about/victor-golubev/" style="color: var(--ink-300);">Об основателе</a><a href="/about/privacy/" style="color: var(--ink-300);">Конфиденциальность</a></nav></div>
+</footer>
+
+<x-import component-from-global-scope="GMF.Dialog" open="{{applyOpen}}" on-close="{{closeApply}}" title="Запись на консультацию" subtitle="1 час, 10 000 ₽. Свяжемся с вами в течение 24 часов.">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{yes}}">
+<div style="padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5);">
+<x-import component-from-global-scope="GMF.TextField" id="lead-name" label="Имя" placeholder="Как к вам обращаться"></x-import>
+<x-import component-from-global-scope="GMF.TextField" id="lead-contact" label="Telegram" hint="ник в Telegram (или укажите email/телефон)" placeholder="@username" default-value="@" error="{{contactError}}" on-focus="{{onContactFocus}}" on-input="{{onContactInput}}"></x-import>
+<x-import component-from-global-scope="GMF.TextField" id="lead-product" label="Продукт в одном предложении" placeholder="Что за продукт и для кого"></x-import>
+<x-import component-from-global-scope="GMF.TextArea" id="lead-message" label="Что хотите обсудить" rows="{{rows}}" placeholder="Где, по-вашему, застрял рост"></x-import>
+<sc-if value="{{hasSendError}}" hint-placeholder-val="{{no}}">
+<div style="font-family: var(--font-ui); font-size: 13px; color: var(--red-600); line-height: 1.4;">{{sendError}}</div>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; justify-content: space-between; padding-top: var(--sp-2);">
+<span style="font-family: var(--font-ui); font-size: 13px; color: var(--ink-500);">Оплата после подтверждения формата.</span>
+<x-import component-from-global-scope="GMF.Button" icon="arrow-right" disabled="{{isSending}}" on-click="{{submit}}">{{submitLabel}}</x-import>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{no}}">
+<div style="padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); align-items: flex-start;">
+<x-import component-from-global-scope="GMF.Badge" tone="success">Заявка отправлена</x-import>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">Свяжемся с вами в течение 24 часов, обсудим формат и способ оплаты.</p>
+<x-import component-from-global-scope="GMF.Button" variant="secondary" on-click="{{closeApply}}">Закрыть</x-import>
+</div>
+</sc-if>
+</x-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
+const LABELS = ['Визиты', 'Регистрации', 'Активные', 'Платящие'];
+// Анимация воронки на первом экране: три сценария по кругу.
+// 1: регистрация 5,0% · активность 13% → 30% · оплата 25%
+// 2: регистрация 1,1% → 4,6% · активность 28% · оплата 23%
+// 3: регистрация 5,4% · активность 33% · оплата 3% → 26%
+const SCENES = [
+  { gap: 1, bad: 2, text: 'Доработка онбординга',
+    before: [9600, 480, 64, 16], after: [9600, 480, 144, 36],
+    wBefore: [100, 62, 28, 12], wAfter: [100, 62, 44, 20] },
+  { gap: 0, bad: 1, text: 'Изменение позиционирования',
+    before: [150000, 1650, 462, 106], after: [150000, 6900, 1932, 444],
+    wBefore: [100, 24, 15, 7], wAfter: [100, 58, 40, 17] },
+  { gap: 2, bad: 3, text: 'Формируем AHA-момент',
+    before: [57000, 3078, 1016, 30], after: [57000, 3078, 1016, 264],
+    wBefore: [100, 66, 49, 5], wAfter: [100, 66, 49, 23] }
+];
+const HOLD_MS = 2600;
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({ open: false, sent: false, sending: false, contactError: '', sendError: '' }, this.blank(0, true));
+    this.timers = [];
+    this.frames = [];
+  }
+  blank(scene, instant) {
+    return { scene: scene, instant: instant, visible: false, reveal: [false, false, false, false],
+      fixed: [false, false, false, false], n: [0, 0, 0, 0], line: false, note: false };
+  }
+  componentDidMount() { this.start(0); }
+  componentWillUnmount() { this.stop(); }
+  stop() {
+    this.timers.forEach(clearTimeout);
+    this.frames.forEach(cancelAnimationFrame);
+    this.timers = [];
+    this.frames = [];
+  }
+  at(ms, fn) { this.timers.push(setTimeout(fn, ms)); }
+  setIdx(key, i, v) {
+    const arr = this.state[key].slice();
+    arr[i] = v;
+    this.setState({ [key]: arr });
+  }
+  count(i, from, to, delay, dur) {
+    this.at(delay, () => {
+      const t0 = performance.now();
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        this.setIdx('n', i, from + (to - from) * e);
+        if (p < 1) this.frames.push(requestAnimationFrame(step));
+      };
+      this.frames.push(requestAnimationFrame(step));
+    });
+  }
+  start(sceneIdx) {
+    this.stop();
+    const sc = SCENES[sceneIdx];
+    const reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      this.setState({ scene: 0, instant: true, visible: true, reveal: [true, true, true, true],
+        fixed: [true, true, true, true], n: SCENES[0].after.slice(), line: true, note: true });
+      return;
+    }
+    this.setState(this.blank(sceneIdx, true));
+    this.at(40, () => this.setState({ instant: false, visible: true }));
+    for (let i = 0; i < 4; i++) {
+      const d = 200 + i * 800;
+      this.at(d, () => this.setIdx('reveal', i, true));
+      this.count(i, 0, sc.before[i], d, 700);
+    }
+    this.at(3500, () => this.setState({ line: true }));
+    this.at(3800, () => this.setState({ note: true }));
+    let t = 5000;
+    for (let i = sc.bad; i < 4; i++) {
+      const d = t;
+      this.at(d, () => this.setIdx('fixed', i, true));
+      this.count(i, sc.before[i], sc.after[i], d, 900);
+      t += 700;
+    }
+    const end = t + 900 + HOLD_MS;
+    this.at(end, () => this.setState({ visible: false }));
+    this.at(end + 550, () => this.start((sceneIdx + 1) % SCENES.length));
+  }
+  fmt(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+  funnelVals(s) {
+    const sc = SCENES[s.scene];
+    const tr = (v) => (s.instant ? 'none' : v);
+    const items = [];
+    for (let i = 0; i < 4; i++) {
+      const shown = s.reveal[i];
+      const healthy = i < sc.bad || s.fixed[i];
+      const w = shown ? (s.fixed[i] ? sc.wAfter[i] : sc.wBefore[i]) : 0;
+      items.push({
+        isRow: true, isGap: false,
+        label: LABELS[i],
+        count: this.fmt(s.n[i]),
+        countStyle: { fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 600, letterSpacing: '-0.03em',
+          fontVariantNumeric: 'tabular-nums',
+          color: i === 3 ? (s.fixed[3] ? '#8DF5BE' : '#FFB3A6') : '#FFFFFF',
+          transition: tr('color 0.5s cubic-bezier(0.2,0,0.2,1)') },
+        labelStyle: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '16px',
+          fontFamily: 'var(--font-ui)', color: '#FFFFFF', width: i === 0 ? '100%' : '62%',
+          opacity: shown ? 1 : 0, transition: tr('opacity 0.4s cubic-bezier(0.16,1,0.3,1)') },
+        barStyle: { height: '44px', boxSizing: 'border-box', borderRadius: '3px', border: '1px solid #FFFFFF',
+          width: w + '%', opacity: shown ? 1 : 0,
+          backgroundColor: healthy ? '#FFFFFF' : 'rgba(255,255,255,0.08)',
+          transition: tr('width 0.8s cubic-bezier(0.65,0,0.35,1), background-color 0.5s cubic-bezier(0.2,0,0.2,1) 0.3s, opacity 0.2s linear') }
+      });
+      if (i < 3) {
+        const isBn = i === sc.gap;
+        items.push({
+          isRow: false, isGap: true,
+          text: sc.text,
+          lineStyle: { position: 'absolute', left: 0, top: 0, bottom: 0, borderLeft: '2px solid #FFFFFF',
+            transformOrigin: 'top center', transform: isBn && s.line ? 'scaleY(1)' : 'scaleY(0)',
+            transition: tr('transform 0.45s cubic-bezier(0.65,0,0.35,1)') },
+          noteStyle: { position: 'absolute', left: '16px', top: 0, bottom: 0, display: 'flex', flexDirection: 'row',
+            gap: '12px', alignItems: 'center', whiteSpace: 'nowrap',
+            opacity: isBn && s.note ? 1 : 0, transform: isBn && s.note ? 'none' : 'translateX(-8px)',
+            transition: tr('opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1)') }
+        });
+      }
+    }
+    const dots = SCENES.map((_, i) => ({
+      style: { display: 'block', width: i === s.scene ? '24px' : '8px', height: '8px', borderRadius: '999px',
+        backgroundColor: i === s.scene ? '#FFFFFF' : 'rgba(255,255,255,0.4)',
+        transition: 'width 0.3s cubic-bezier(0.2,0,0.2,1), background-color 0.3s cubic-bezier(0.2,0,0.2,1)' }
+    }));
+    return {
+      items: items,
+      dots: dots,
+      colStyle: { display: 'flex', flexDirection: 'column', opacity: s.visible ? 1 : 0,
+        transition: tr('opacity 0.5s cubic-bezier(0.2,0,0.2,1)') }
+    };
+  }
+  handleSubmit() {
+    if (this.state && this.state.sending) return;
+
+    const nameEl = document.getElementById('lead-name');
+    const contactEl = document.getElementById('lead-contact');
+    const productEl = document.getElementById('lead-product');
+    const messageEl = document.getElementById('lead-message');
+
+    const name = nameEl ? nameEl.value.trim() : '';
+    const contact = contactEl ? contactEl.value.trim() : '';
+    const product = productEl ? productEl.value.trim() : '';
+    const message = messageEl ? messageEl.value.trim() : '';
+
+    if (!contact || contact === '@') {
+      this.setState({ contactError: 'Пожалуйста, укажите ваш контакт (например: @username)' });
+      if (contactEl) {
+        contactEl.focus();
+        contactEl.setSelectionRange(contactEl.value.length, contactEl.value.length);
+      }
+      return;
+    }
+
+    this.setState({ sending: true, contactError: '', sendError: '' });
+
+    fetch('./send.ashx', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify({
+        name: name || 'Не указано',
+        contact: contact,
+        product: product || 'Не указано',
+        message: message || 'Не указано'
+      })
+    })
+      .then(async (res) => {
+        let data = null;
+        try {
+          data = await res.json();
+        } catch (e) {}
+
+        if (res.ok && data && (data.success === true || data.success === 'true')) {
+          this.setState({ sent: true, sending: false });
+        } else {
+          let msg = (data && data.message) || ('HTTP ' + res.status + (res.statusText ? ' ' + res.statusText : ''));
+          throw new Error(msg);
+        }
+      })
+      .catch((err) => {
+        console.error('Ошибка отправки заявки:', err);
+        const detail = (err && err.message) ? err.message : 'Сетевая ошибка';
+        this.setState({
+          sending: false,
+          sendError: 'Ошибка: ' + detail + '. Напишите в Telegram: @vsgol'
+        });
+      });
+  }
+  renderVals() {
+    const s = this.state || {};
+    const f = this.funnelVals(s);
+    return {
+      items: f.items,
+      dots: f.dots,
+      colStyle: f.colStyle,
+      yes: true,
+      no: false,
+      zero: 0,
+      rows: 4,
+      iconSm: 16,
+      logoH: 54,
+      applyOpen: !!s.open,
+      sent: !!s.sent,
+      notSent: !s.sent,
+      isSending: !!s.sending,
+      submitLabel: s.sending ? 'Отправка...' : 'Отправить заявку',
+      contactError: s.contactError || '',
+      sendError: s.sendError || '',
+      hasSendError: !!s.sendError,
+      onContactFocus: (e) => {
+        const el = (e && e.target) || document.getElementById('lead-contact');
+        if (el) {
+          if (!el.value) el.value = '@';
+          const len = el.value.length;
+          el.setSelectionRange(len, len);
+        }
+      },
+      onContactInput: (e) => {
+        const el = (e && e.target) || document.getElementById('lead-contact');
+        if (el) {
+          const val = el.value;
+          if (!val) {
+            el.value = '@';
+          } else if (!val.startsWith('@') && !val.startsWith('+') && !val.includes('@')) {
+            el.value = '@' + val;
+          }
+        }
+        if (this.state && this.state.contactError) {
+          this.setState({ contactError: '' });
+        }
+      },
+      openApply: () => { window.open('https://calendar.app.google/DZBxhLjkDBSUq25a7', '_blank', 'noopener'); },
+      closeApply: () => this.setState({ open: false, contactError: '', sendError: '' }),
+      submit: () => this.handleSubmit(),
+      faq: [
+        { q: 'Почему вы не работаете с ранними стартапами?', a: 'Наш подход опирается на реальные данные о пользователях и выручке. Если данных ещё нет, рекомендации будут строиться на гипотезах, а не на анализе. Сначала стоит собрать первых пользователей.' },
+        { q: 'Экспресс-диагностика правда бесплатная?', a: 'Да. 20 минут обсуждаем ваши метрики, находим узкое место и даём пару идей, что можно изменить. В конце предлагаем формат дальнейшей работы, решение за вами.' },
+        { q: 'Как проходит оплата платных форматов?', a: 'Формат обсуждаем на экспресс-диагностике. Оплата через СБП, перевод по карте или счёт на юрлицо, как удобнее.' },
+        { q: 'Возможен ли возврат?', a: 'Для консультации возврат обычно не нужен: формат короткий. Для анализа продукта и плана роста за 50 000 ₽ действует 100% возврат в течение 7 дней, если не смогли найти проблему и варианты решения.' },
+        { q: 'Сколько времени от меня нужно?', a: 'Для консультации: 15 минут на форму и час на созвон. Для анализа продукта и плана роста: 30-40 минут на подготовку материалов, 2 часа на созвон и 1 час на разбор итогов. Остальное делаем мы.' },
+        { q: 'У меня нестандартный случай, подойдёт ли?', a: 'За 10 лет работали с SaaS, marketplace, EdTech, ИИ, B2B, B2C, госсектором. Скорее всего, похожий случай уже встречался. Если по описанию поймём, что не наш профиль, скажем до оплаты.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

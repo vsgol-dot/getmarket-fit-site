@@ -1,0 +1,3 @@
+# зеркало getmarket.fit на GitHub Pages: основной сайт — https://getmarket.fit/
+User-agent: *
+Disallow: /
