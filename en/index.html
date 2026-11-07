@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>getmarket.fit | product-market fit for products with revenue</title>
+<script src="/vendor/react.js"></script>
+<script src="/vendor/react-dom.js"></script>
+<script src="/support.js"></script>
+<link rel="stylesheet" href="/ds/gmf/components/bundle.css">
+<script src="/ds/gmf/components/lib/lucide.min.js"></script>
+<script src="/ds/gmf/components/bundle.js"></script>
+<!-- GMF-BLOG:head -->
+<meta name="description" content="Product consulting for startups with first revenue: we find where users and payments leak and build a growth plan. Free 20 minute diagnostic call.">
+<link rel="canonical" href="https://getmarket.fit/en/">
+<link rel="alternate" hreflang="ru" href="https://getmarket.fit/"><link rel="alternate" hreflang="en" href="https://getmarket.fit/en/"><link rel="alternate" hreflang="x-default" href="https://getmarket.fit/">
+<meta property="og:site_name" content="getmarket.fit">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="getmarket.fit | product-market fit for products with revenue">
+<meta property="og:description" content="Growth stalled? We show where the money leaks and how to fix it. Diagnostic call, consultation, product and growth plan analysis, ongoing advisory.">
+<meta property="og:url" content="https://getmarket.fit/en/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://getmarket.fit/en/#page", "url": "https://getmarket.fit/en/", "inLanguage": "en", "name": "getmarket.fit", "about": {"@id": "https://getmarket.fit/#org"}}, {"@type": "ProfessionalService", "@id": "https://getmarket.fit/en/#service", "name": "getmarket.fit", "url": "https://getmarket.fit/en/", "description": "Product consulting for startups with first revenue: we find where users and payments leak and build a growth plan. Free 20 minute diagnostic call.", "provider": {"@id": "https://getmarket.fit/#org"}, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "name": "Diagnostic call", "description": "20 minutes: we find the bottleneck in your metrics and give you a couple of ideas on what to change.", "price": "0", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Consultation", "description": "A one hour call on your question plus recommendations for 2 weeks.", "price": "200", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Product and growth plan analysis", "description": "Metrics and product review, a document with the diagnosis and a 2-3 month plan.", "price": "600", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Ongoing product advisory", "description": "Weekly work: meetings, metrics reviews, adjusting course.", "price": "1000", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Product team as a subscription", "description": "A CPO and product specialists.", "price": "2500", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Strategy and research", "description": "Product and go-to-market strategy, customer interviews, competitor analysis, demand validation. Priced per project."}]}}]}</script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(114067698,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/114067698" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DCLWKHR7FQ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DCLWKHR7FQ');</script>
+<script>(function(){function goal(g){try{ym(114067698,'reachGoal',g)}catch(e){}try{gtag('event',g)}catch(e){}}
+document.addEventListener('click',function(e){var b=e.target.closest('button,a');if(!b)return;if(/diagnostic/i.test(b.textContent||''))goal('consult');if(b.getAttribute('data-goal'))goal(b.getAttribute('data-goal'))},true);
+window.addEventListener('message',function(e){if(e.origin==='https://calendly.com'&&e.data&&e.data.event==='calendly.event_scheduled')goal('lead')});
+if(/consult/.test(location.hash)||/[?&]apply=1/.test(location.search)){location.replace('https://calendly.com/v-s-golubev/marketfit14')}
+})();</script>
+<style>
+.gmf-nav{display:flex;align-items:center;gap:var(--sp-5)}
+.gmf-links{display:flex;align-items:center;gap:var(--sp-5)}
+.gmf-links>a,.gmf-dd>summary{font-family:var(--font-ui);font-weight:500;font-size:15px;color:var(--ink-900);text-decoration:none;cursor:pointer}
+.gmf-dd,.gmf-burger{position:relative}
+.gmf-dd>summary,.gmf-burger>summary{list-style:none;display:flex;align-items:center;gap:6px;min-height:40px}
+.gmf-dd>summary::-webkit-details-marker,.gmf-burger>summary::-webkit-details-marker{display:none}
+.gmf-dd>summary:after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.gmf-dd[open]>summary:after{transform:translateY(2px) rotate(-135deg)}
+.gmf-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:260px;background:#fff;border:1px solid var(--border-hairline);border-radius:8px;box-shadow:0 12px 32px rgba(17,18,20,.12);padding:6px;display:flex;flex-direction:column;z-index:40}
+.gmf-dd .gmf-menu{left:-12px;right:auto}
+.gmf-menu a{display:block;white-space:nowrap;padding:10px 12px;border-radius:6px;font-family:var(--font-ui);font-size:15px;color:var(--ink-900);text-decoration:none}
+.gmf-menu a:hover,.gmf-menu a:focus-visible{background:var(--blue-050)}
+.gmf-menu .gmf-sep{height:1px;background:var(--border-hairline);margin:4px 6px}
+.gmf-burger{display:none}
+.gmf-burger>summary{width:40px;justify-content:center;cursor:pointer;border-radius:8px}
+.gmf-burger>summary span,.gmf-burger>summary span:before,.gmf-burger>summary span:after{display:block;width:18px;height:2px;background:var(--ink-900);border-radius:1px;position:relative;content:""}
+.gmf-burger>summary span:before{position:absolute;top:-6px}.gmf-burger>summary span:after{position:absolute;top:6px}
+.gmf-nav summary:focus-visible,.gmf-links>a:focus-visible{outline:2px solid var(--blue-500);outline-offset:2px;border-radius:4px}
+@media (max-width:760px){.gmf-links{display:none}.gmf-burger{display:block}.gmf-nav{gap:var(--sp-3)}}
+</style>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){d.removeAttribute('open')})});</script>
+<!-- /GMF-BLOG:head -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&amp;family=JetBrains+Mono:wght@400&amp;display=swap">
+<style>
+:root{
+--blue-600:#2C41E8;--blue-500:#415AFE;--blue-400:#6C7FFF;--blue-200:#C3CBFF;--blue-100:#E5E9FF;--blue-050:#F2F4FF;
+--ink-900:#111214;--ink-700:#3A3E45;--ink-500:#6B7078;--ink-400:#8E949C;--ink-300:#B9BEC5;--ink-200:#DDE0E4;--ink-100:#ECEEF1;
+--paper:#FFFFFF;--paper-2:#F7F8FA;--paper-3:#F1F3F6;
+--green-600:#1B7A4F;--green-100:#E6F4EC;--amber-600:#8A5A00;--amber-100:#FBF1DC;--red-600:#B02418;--red-100:#FBE9E7;
+--text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-faint:var(--ink-500);--text-accent:var(--blue-600);
+--text-on-accent:#FFFFFF;--text-on-accent-muted:rgba(255,255,255,0.72);
+--surface-page:var(--paper);--surface-sunken:var(--paper-2);--surface-card:var(--paper);--surface-accent:var(--blue-500);--surface-accent-hover:var(--blue-600);
+--accent-contrast:#FFFFFF;--surface-accent-soft:var(--blue-050);--surface-ink:var(--ink-900);
+--border-hairline:var(--ink-200);--border-strong:var(--ink-900);--border-accent:var(--blue-500);--border-on-accent:rgba(255,255,255,0.28);--focus-ring:var(--blue-500);
+--font-display:"Geologica","Helvetica Neue",Helvetica,Arial,sans-serif;--font-ui:"Geologica","Helvetica Neue",Helvetica,Arial,sans-serif;--font-text:"Literata",Georgia,"Times New Roman",serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-20:20px;--fs-24:24px;--fs-30:30px;--fs-38:38px;--fs-48:48px;--fs-60:60px;--fs-76:76px;
+--fw-light:300;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;
+--lh-tight:1.06;--lh-heading:1.16;--lh-snug:1.35;--lh-body:1.62;--lh-loose:1.75;
+--tr-tightest:-0.03em;--tr-tight:-0.018em;--tr-normal:0;--tr-label:0.08em;--tr-label-wide:0.14em;
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:40px;--sp-8:56px;--sp-9:72px;--sp-10:96px;--sp-11:128px;--sp-12:160px;
+--section-y:128px;--section-y-compact:72px;--gutter:32px;
+--radius-0:0px;--radius-1:3px;--radius-2:6px;--radius-3:10px;--radius-pill:999px;
+--shadow-none:none;--shadow-pop:0 8px 24px -8px rgba(17,18,20,0.18),0 1px 2px rgba(17,18,20,0.06);--shadow-modal:0 32px 64px -24px rgba(17,18,20,0.28);
+--measure-text:68ch;--measure-lead:46ch;--container:1120px;--container-narrow:760px;
+--bw-hairline:1px;--bw-strong:2px;
+--dur-fast:120ms;--dur-base:180ms;--dur-slow:320ms;--ease-standard:cubic-bezier(0.2,0,0.2,1);--ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+body{margin:0;background:#FFFFFF}
+a{color:#2C41E8}a:hover{color:#111214}
+@media (max-width: 720px){:root{--section-y:80px;--section-y-compact:56px;--gutter:20px}}
+</style>
+</helmet>
+<div style="width: 100%; font-family: var(--font-text); color: var(--text-body); background: var(--paper);">
+
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid var(--border-hairline);">
+<div style="max-width: var(--container); margin: 0 auto; padding: 14px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5);">
+<a href="#top" aria-label="getmarket.fit, back to top" style="text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.03em; line-height: 1; color: var(--ink-900);"><span style="color: var(--blue-500);">get</span>marketfit</a>
+<!-- GMF-BLOG:nav --><div class="gmf-nav"><a class="gmf-lang" href="/?lang=ru" hreflang="ru" lang="ru" aria-label="Русская версия" style="font-family:var(--font-ui);font-weight:500;font-size:14px;letter-spacing:.04em;color:var(--ink-500);text-decoration:none;padding:8px 4px">RU</a><x-import component-from-global-scope="GMF.Button" size="sm" on-click="{{openApply}}">Free diagnostic</x-import></div>
+</div>
+</header>
+
+<section id="top" class="on-accent" style="background: var(--blue-500); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto; display: flex; flex-wrap: wrap; gap: var(--sp-8) 64px; align-items: center;">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; align-items: flex-start;">
+<h1 style="margin: 0; font-family: var(--font-display); font-size: clamp(38px, 4.2vw, 60px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;"><strong>Growth stalled? We show where the money leaks and how to fix it</strong></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #FFFFFF; max-width: 46ch;">We look at the whole customer journey, from the first site visit to the repeat payment. We find the bottleneck and build a plan your team can actually execute.</p>
+<div style="display: flex; flex-direction: column; gap: var(--sp-3); align-items: flex-start;">
+<x-import component-from-global-scope="GMF.Button" size="lg" icon="arrow-right" on-click="{{openApply}}">Book a free diagnostic call</x-import>
+<x-import component-from-global-scope="GMF.PriceLine" price="Free, 20 minutes." note="We tell you where the problem is and which format of work you need."></x-import>
+</div>
+</div>
+<div aria-hidden="true" style="flex: 1 1 400px; min-width: 0; max-width: 500px; display: flex; flex-direction: column; gap: 36px;">
+<div style="{{colStyle}}">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="7">
+<sc-if value="{{it.isRow}}" hint-placeholder-val="{{yes}}">
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<div style="{{it.labelStyle}}"><span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em;">{{it.label}}</span><span style="{{it.countStyle}}">{{it.count}}</span></div>
+<div style="{{it.barStyle}}"></div>
+</div>
+</sc-if>
+<sc-if value="{{it.isGap}}" hint-placeholder-val="{{no}}">
+<div style="position: relative; height: 56px; margin-left: 8px;">
+<div style="{{it.lineStyle}}"></div>
+<div style="{{it.noteStyle}}">
+<span style="font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #2C41E8; background: #FFFFFF; border-radius: 3px; padding: 4px 8px;">Bottleneck</span>
+<span style="font-family: var(--font-ui); font-size: 15px; font-weight: 500; color: #FFFFFF;">{{it.text}}</span>
+</div>
+</div>
+</sc-if>
+</sc-for>
+</div>
+<div style="display: flex; gap: 8px; align-items: center;">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<span style="{{d.style}}"></span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="01">Problems we solve</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-6); margin-top: var(--sp-7);">
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Traffic, but no sign-ups</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">Visitors look around and leave. You change the copy and the offer, but sign-up conversion does not move.</p>
+</div>
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Sign-ups, but no usage</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">People create an account and disappear. They try nothing inside the product and never come back.</p>
+</div>
+<div style="border: 1px solid var(--border-hairline); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); background: var(--paper);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: var(--ink-900); max-width: 18ch;">Usage, but no payments</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">You have active users but almost no paying ones. They happily use the free part and never get to paying.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="on-ink" style="background: var(--ink-900); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="02">What we do</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: var(--sp-5); margin-top: var(--sp-7);">
+<div style="grid-column: 1 / -1; border: 1px solid var(--blue-400); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(65,90,254,0.12);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF; background: var(--blue-500); border-radius: 3px; padding: 4px 8px;">Start here</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Diagnostic call · 20 minutes</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: var(--blue-400); white-space: nowrap;">Free</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100); max-width: 80ch;">A short call about your metrics: we find the bottleneck and what can be changed, give you a couple of ideas right away and suggest a format for further work.</p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">1 hour</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Consultation</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">$200</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">A one hour call on your specific question plus a one page set of recommendations for the next 2 weeks.</p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">4 business days</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Product and growth plan analysis</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">from $600</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">A structured review for when it is unclear where exactly the problem is. We analyze your metrics and product and deliver a document with the diagnosis, priorities and an action plan for 2-3 months. Takes 4 business days.</p>
+<p style="margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--ink-300);"><br></p>
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Weekly</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Ongoing product advisory</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">$1,000/mo</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">For teams that need an outside strategic view. Weekly work: meetings, metrics reviews, assessing results, adjusting course. We build a system for your scaling.</p>
+
+</div>
+<div style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Head of Product + team</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Product team as a subscription</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums; white-space: nowrap;">$2,500/mo</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">For teams that need not only strategy but hands too. A CPO plus product specialists working by a proven methodology.</p>
+
+</div>
+<div style="grid-column: 1 / -1; border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); background: rgba(255,255,255,0.05);">
+<span style="align-self: flex-start; font-family: var(--font-ui); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 3px 8px;">Custom scope</span>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-2) var(--sp-5);">
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.16; letter-spacing: -0.018em; color: #FFFFFF;">Strategy and research</h3>
+<span style="font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.03em; color: #FFFFFF; white-space: nowrap;">On request</span>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100); max-width: 80ch;">Product and go-to-market strategy, research with customer interviews, competitor analysis, demand validation before launch. Scope and price are agreed on the diagnostic call.</p>
+</div>
+</div>
+<div style="margin-top: var(--sp-7); display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center;">
+<x-import component-from-global-scope="GMF.Button" icon="arrow-right" on-click="{{openApply}}">Book a free diagnostic call</x-import>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper-2); padding: var(--section-y-compact) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="03">How it works</x-import>
+<p style="margin: var(--sp-6) 0 0; font-size: 20px; line-height: 1.5; color: var(--ink-900); max-width: 60ch;">We start with a free 20 minute diagnostic call: we discuss your metrics, find the bottleneck and give you a couple of ideas on what to change right away. Then we suggest a format: a consultation, a product and growth plan analysis, or ongoing advisory. The decision is always yours.</p>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y-compact) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-5);">
+<x-import component-from-global-scope="GMF.SectionLabel" number="04">What we do not do</x-import>
+<ul style="list-style: none; margin: var(--sp-2) 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--border-hairline);">
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">We do not replace your domain expertise, it has to be in the team</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">We do not do design</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">We do not run ads or set up ad accounts</span></li>
+<li style="display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--border-hairline); color: var(--ink-500);"><x-import component-from-global-scope="GMF.Icon" name="minus" size="{{iconSm}}" style="margin-top: 4px;"></x-import><span style="font-size: 16px; line-height: 1.35; color: var(--ink-900);">We do not replace your whole team</span></li>
+</ul>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-500);">If needed, we will help you find people to do the work.</p>
+</div>
+</section>
+
+<section class="on-ink" style="background: var(--ink-900); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto;">
+
+<x-import component-from-global-scope="GMF.SectionLabel" number="05">Case studies</x-import>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-5); margin-top: var(--sp-7);">
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums;">×1.7</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">sign-up conversion</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">B2C route planning service for outdoor activities</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Challenge</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Visitor to sign-up conversion was below the level where traffic pays off.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">What we did</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Rebuilt the first screen and the value proposition, narrowed the segment.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Result</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">Sign-up conversion grew 1.7 times.</p></div>
+</article>
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;">First</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">paying users</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">B2B AI service for sales teams</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Challenge</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">MVP launched, no paying users, positioning unclear.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">What we did</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Rebuilt the positioning, defined the ICP, relaunched the product for that segment.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Result</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">The first paying users came in.</p></div>
+</article>
+
+<article style="border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); background: rgba(255,255,255,0.05);">
+<div style="display: flex; flex-direction: column; gap: var(--sp-2); padding-bottom: var(--sp-5); border-bottom: 1px solid rgba(255,255,255,0.18);">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF; font-variant-numeric: tabular-nums;">20 → 45%</span>
+<span style="font-family: var(--font-ui); font-size: 14px; line-height: 1.35; color: var(--ink-300);">pilot conversion</span>
+</div>
+<h3 style="margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.35; letter-spacing: -0.018em; color: #FFFFFF;">Platform for recruiters</h3>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Challenge</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Pilot conversion was stuck at 20%.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">What we did</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-100);">Restructured the pilot, moved the moment of first value, improved onboarding.</p></div>
+<div style="display: flex; flex-direction: column; gap: var(--sp-2);"><span style="font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300);">Result</span><p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF;">Pilot conversion grew from 20% to 45%.</p></div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper); padding: var(--section-y) var(--gutter); position: relative">
+<div style="max-width: var(--container); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="06">Who is behind it</x-import>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-8); margin-top: var(--sp-7); align-items: flex-start; position: relative">
+<div style="box-sizing: border-box; display: flex; flex-direction: column; width: 363px; max-width: 100%; height: 520px; border-radius: 8px; position: static; background: url(&quot;/assets/5b10830cadb542574368401bb67230a0.webp&quot;) center / cover no-repeat"></div>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: var(--sp-5);">
+<h2 style="margin: 0; font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 48px); font-weight: 600; line-height: 1.16; letter-spacing: -0.03em; color: var(--ink-900); max-width: 22ch">Victor Golubev, 12 years of launching startups</h2>
+<div style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700); max-width: 68ch;"><p>Former CPO and CMO, co-founder, and head of an internal corporate product accelerator.</p>
+  <p>At inDrive I launched new business lines around the world: marketplaces in Latin America, Asia and Africa. In Uganda I led the launch of government services. At University 2035 I was responsible for platforms with 500,000 learners.</p>
+  <p>Founded and grew a B2B SaaS for five years. No investment, bootstrapped, to 1,000 MAU and sustainable monetization.</p>
+  <p>Different niches, different scales, the same challenges: from zero to the first users, searching for market fit under uncertainty.</p></div>
+
+<div style="height: 1px; background: var(--border-hairline);"></div>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-5); align-items: flex-start;">
+<span style="font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: var(--blue-600); font-variant-numeric: tabular-nums;">100+</span>
+<p style="flex: 1 1 280px; min-width: 0; margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700); max-width: 52ch;">More than 100 startups have worked with us over the past year. We know what the market lives on right now and what it takes to get moving.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: var(--paper-2); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto;">
+<x-import component-from-global-scope="GMF.SectionLabel" number="07">FAQ</x-import>
+<div style="margin-top: var(--sp-7);">
+<x-import component-from-global-scope="GMF.Accordion" items="{{faq}}" default-open="{{zero}}"></x-import>
+</div>
+</div>
+</section>
+
+<section class="on-accent" style="background: var(--blue-500); padding: var(--section-y) var(--gutter);">
+<div style="max-width: var(--container-narrow); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-6); align-items: center; text-align: center;">
+<h2 style="margin: 0; font-family: var(--font-display); font-size: clamp(38px, 4.4vw, 60px); font-weight: 600; line-height: 1.06; letter-spacing: -0.03em; color: #FFFFFF;">Get in touch</h2>
+<x-import component-from-global-scope="GMF.Button" size="lg" icon="arrow-right" on-click="{{openApply}}">Book a free diagnostic call</x-import>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: #FFFFFF; max-width: 46ch;">Or message me on Telegram: <a href="https://t.me/vsgol" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255)">@vsgol</a> if you have questions.</p>
+</div>
+</section>
+
+<footer class="on-ink" style="background: var(--ink-900); padding: var(--sp-8) var(--gutter);">
+<div style="max-width: var(--container); margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-2); font-family: var(--font-ui); font-size: 14px; line-height: 1.6; color: var(--ink-300);"><span style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.03em; line-height: 1.2; color: rgb(255, 255, 255)">getmarket<span style="color: var(--blue-400)">fit</span></span><!-- GMF-BLOG:foot --><nav aria-label="Links" style="display: flex; flex-wrap: wrap; gap: var(--sp-4);"><a href="https://t.me/vsgol" style="color: var(--ink-300);">Telegram</a><a href="https://www.linkedin.com/in/victor-golubev-7610a058/" style="color: var(--ink-300);">LinkedIn</a><a href="/?lang=ru" hreflang="ru" style="color: var(--ink-300);">Русская версия</a></nav></div>
+</footer>
+
+<x-import component-from-global-scope="GMF.Dialog" open="{{applyOpen}}" on-close="{{closeApply}}" title="Book a consultation" subtitle="1 hour, $200. We will get back to you within 24 hours.">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{yes}}">
+<div style="padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5);">
+<x-import component-from-global-scope="GMF.TextField" id="lead-name" label="Name" placeholder="How should we call you"></x-import>
+<x-import component-from-global-scope="GMF.TextField" id="lead-contact" label="Telegram" hint="Telegram username (or email/phone)" placeholder="@username" default-value="@" error="{{contactError}}" on-focus="{{onContactFocus}}" on-input="{{onContactInput}}"></x-import>
+<x-import component-from-global-scope="GMF.TextField" id="lead-product" label="Your product in one sentence" placeholder="What the product is and who it is for"></x-import>
+<x-import component-from-global-scope="GMF.TextArea" id="lead-message" label="What would you like to discuss" rows="{{rows}}" placeholder="Where do you think growth got stuck"></x-import>
+<sc-if value="{{hasSendError}}" hint-placeholder-val="{{no}}">
+<div style="font-family: var(--font-ui); font-size: 13px; color: var(--red-600); line-height: 1.4;">{{sendError}}</div>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; justify-content: space-between; padding-top: var(--sp-2);">
+<span style="font-family: var(--font-ui); font-size: 13px; color: var(--ink-500);">Payment after we agree on the format.</span>
+<x-import component-from-global-scope="GMF.Button" icon="arrow-right" disabled="{{isSending}}" on-click="{{submit}}">{{submitLabel}}</x-import>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{no}}">
+<div style="padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); align-items: flex-start;">
+<x-import component-from-global-scope="GMF.Badge" tone="success">Request sent</x-import>
+<p style="margin: 0; font-size: 16px; line-height: 1.62; color: var(--ink-700);">We will get back to you within 24 hours to discuss the format and payment.</p>
+<x-import component-from-global-scope="GMF.Button" variant="secondary" on-click="{{closeApply}}">Close</x-import>
+</div>
+</sc-if>
+</x-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
+const LABELS = ['Visits', 'Sign-ups', 'Active', 'Paying'];
+// Анимация воронки на первом экране: три сценария по кругу.
+// 1: регистрация 5,0% · активность 13% → 30% · оплата 25%
+// 2: регистрация 1,1% → 4,6% · активность 28% · оплата 23%
+// 3: регистрация 5,4% · активность 33% · оплата 3% → 26%
+const SCENES = [
+  { gap: 1, bad: 2, text: 'Onboarding fix',
+    before: [9600, 480, 64, 16], after: [9600, 480, 144, 36],
+    wBefore: [100, 62, 28, 12], wAfter: [100, 62, 44, 20] },
+  { gap: 0, bad: 1, text: 'New positioning',
+    before: [150000, 1650, 462, 106], after: [150000, 6900, 1932, 444],
+    wBefore: [100, 24, 15, 7], wAfter: [100, 58, 40, 17] },
+  { gap: 2, bad: 3, text: 'Building the aha moment',
+    before: [57000, 3078, 1016, 30], after: [57000, 3078, 1016, 264],
+    wBefore: [100, 66, 49, 5], wAfter: [100, 66, 49, 23] }
+];
+const HOLD_MS = 2600;
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({ open: false, sent: false, sending: false, contactError: '', sendError: '' }, this.blank(0, true));
+    this.timers = [];
+    this.frames = [];
+  }
+  blank(scene, instant) {
+    return { scene: scene, instant: instant, visible: false, reveal: [false, false, false, false],
+      fixed: [false, false, false, false], n: [0, 0, 0, 0], line: false, note: false };
+  }
+  componentDidMount() { this.start(0); }
+  componentWillUnmount() { this.stop(); }
+  stop() {
+    this.timers.forEach(clearTimeout);
+    this.frames.forEach(cancelAnimationFrame);
+    this.timers = [];
+    this.frames = [];
+  }
+  at(ms, fn) { this.timers.push(setTimeout(fn, ms)); }
+  setIdx(key, i, v) {
+    const arr = this.state[key].slice();
+    arr[i] = v;
+    this.setState({ [key]: arr });
+  }
+  count(i, from, to, delay, dur) {
+    this.at(delay, () => {
+      const t0 = performance.now();
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        this.setIdx('n', i, from + (to - from) * e);
+        if (p < 1) this.frames.push(requestAnimationFrame(step));
+      };
+      this.frames.push(requestAnimationFrame(step));
+    });
+  }
+  start(sceneIdx) {
+    this.stop();
+    const sc = SCENES[sceneIdx];
+    const reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      this.setState({ scene: 0, instant: true, visible: true, reveal: [true, true, true, true],
+        fixed: [true, true, true, true], n: SCENES[0].after.slice(), line: true, note: true });
+      return;
+    }
+    this.setState(this.blank(sceneIdx, true));
+    this.at(40, () => this.setState({ instant: false, visible: true }));
+    for (let i = 0; i < 4; i++) {
+      const d = 200 + i * 800;
+      this.at(d, () => this.setIdx('reveal', i, true));
+      this.count(i, 0, sc.before[i], d, 700);
+    }
+    this.at(3500, () => this.setState({ line: true }));
+    this.at(3800, () => this.setState({ note: true }));
+    let t = 5000;
+    for (let i = sc.bad; i < 4; i++) {
+      const d = t;
+      this.at(d, () => this.setIdx('fixed', i, true));
+      this.count(i, sc.before[i], sc.after[i], d, 900);
+      t += 700;
+    }
+    const end = t + 900 + HOLD_MS;
+    this.at(end, () => this.setState({ visible: false }));
+    this.at(end + 550, () => this.start((sceneIdx + 1) % SCENES.length));
+  }
+  fmt(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  funnelVals(s) {
+    const sc = SCENES[s.scene];
+    const tr = (v) => (s.instant ? 'none' : v);
+    const items = [];
+    for (let i = 0; i < 4; i++) {
+      const shown = s.reveal[i];
+      const healthy = i < sc.bad || s.fixed[i];
+      const w = shown ? (s.fixed[i] ? sc.wAfter[i] : sc.wBefore[i]) : 0;
+      items.push({
+        isRow: true, isGap: false,
+        label: LABELS[i],
+        count: this.fmt(s.n[i]),
+        countStyle: { fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 600, letterSpacing: '-0.03em',
+          fontVariantNumeric: 'tabular-nums',
+          color: i === 3 ? (s.fixed[3] ? '#8DF5BE' : '#FFB3A6') : '#FFFFFF',
+          transition: tr('color 0.5s cubic-bezier(0.2,0,0.2,1)') },
+        labelStyle: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '16px',
+          fontFamily: 'var(--font-ui)', color: '#FFFFFF', width: i === 0 ? '100%' : '62%',
+          opacity: shown ? 1 : 0, transition: tr('opacity 0.4s cubic-bezier(0.16,1,0.3,1)') },
+        barStyle: { height: '44px', boxSizing: 'border-box', borderRadius: '3px', border: '1px solid #FFFFFF',
+          width: w + '%', opacity: shown ? 1 : 0,
+          backgroundColor: healthy ? '#FFFFFF' : 'rgba(255,255,255,0.08)',
+          transition: tr('width 0.8s cubic-bezier(0.65,0,0.35,1), background-color 0.5s cubic-bezier(0.2,0,0.2,1) 0.3s, opacity 0.2s linear') }
+      });
+      if (i < 3) {
+        const isBn = i === sc.gap;
+        items.push({
+          isRow: false, isGap: true,
+          text: sc.text,
+          lineStyle: { position: 'absolute', left: 0, top: 0, bottom: 0, borderLeft: '2px solid #FFFFFF',
+            transformOrigin: 'top center', transform: isBn && s.line ? 'scaleY(1)' : 'scaleY(0)',
+            transition: tr('transform 0.45s cubic-bezier(0.65,0,0.35,1)') },
+          noteStyle: { position: 'absolute', left: '16px', top: 0, bottom: 0, display: 'flex', flexDirection: 'row',
+            gap: '12px', alignItems: 'center', whiteSpace: 'nowrap',
+            opacity: isBn && s.note ? 1 : 0, transform: isBn && s.note ? 'none' : 'translateX(-8px)',
+            transition: tr('opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1)') }
+        });
+      }
+    }
+    const dots = SCENES.map((_, i) => ({
+      style: { display: 'block', width: i === s.scene ? '24px' : '8px', height: '8px', borderRadius: '999px',
+        backgroundColor: i === s.scene ? '#FFFFFF' : 'rgba(255,255,255,0.4)',
+        transition: 'width 0.3s cubic-bezier(0.2,0,0.2,1), background-color 0.3s cubic-bezier(0.2,0,0.2,1)' }
+    }));
+    return {
+      items: items,
+      dots: dots,
+      colStyle: { display: 'flex', flexDirection: 'column', opacity: s.visible ? 1 : 0,
+        transition: tr('opacity 0.5s cubic-bezier(0.2,0,0.2,1)') }
+    };
+  }
+  handleSubmit() {
+    if (this.state && this.state.sending) return;
+
+    const nameEl = document.getElementById('lead-name');
+    const contactEl = document.getElementById('lead-contact');
+    const productEl = document.getElementById('lead-product');
+    const messageEl = document.getElementById('lead-message');
+
+    const name = nameEl ? nameEl.value.trim() : '';
+    const contact = contactEl ? contactEl.value.trim() : '';
+    const product = productEl ? productEl.value.trim() : '';
+    const message = messageEl ? messageEl.value.trim() : '';
+
+    if (!contact || contact === '@') {
+      this.setState({ contactError: 'Please add your contact (for example: @username)' });
+      if (contactEl) {
+        contactEl.focus();
+        contactEl.setSelectionRange(contactEl.value.length, contactEl.value.length);
+      }
+      return;
+    }
+
+    this.setState({ sending: true, contactError: '', sendError: '' });
+
+    fetch('./send.ashx', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify({
+        name: name || 'Not specified',
+        contact: contact,
+        product: product || 'Not specified',
+        message: message || 'Not specified'
+      })
+    })
+      .then(async (res) => {
+        let data = null;
+        try {
+          data = await res.json();
+        } catch (e) {}
+
+        if (res.ok && data && (data.success === true || data.success === 'true')) {
+          this.setState({ sent: true, sending: false });
+        } else {
+          let msg = (data && data.message) || ('HTTP ' + res.status + (res.statusText ? ' ' + res.statusText : ''));
+          throw new Error(msg);
+        }
+      })
+      .catch((err) => {
+        console.error('Request failed:', err);
+        const detail = (err && err.message) ? err.message : 'Network error';
+        this.setState({
+          sending: false,
+          sendError: 'Error: ' + detail + '. Message me on Telegram: @vsgol'
+        });
+      });
+  }
+  renderVals() {
+    const s = this.state || {};
+    const f = this.funnelVals(s);
+    return {
+      items: f.items,
+      dots: f.dots,
+      colStyle: f.colStyle,
+      yes: true,
+      no: false,
+      zero: 0,
+      rows: 4,
+      iconSm: 16,
+      logoH: 54,
+      applyOpen: !!s.open,
+      sent: !!s.sent,
+      notSent: !s.sent,
+      isSending: !!s.sending,
+      submitLabel: s.sending ? 'Sending...' : 'Send request',
+      contactError: s.contactError || '',
+      sendError: s.sendError || '',
+      hasSendError: !!s.sendError,
+      onContactFocus: (e) => {
+        const el = (e && e.target) || document.getElementById('lead-contact');
+        if (el) {
+          if (!el.value) el.value = '@';
+          const len = el.value.length;
+          el.setSelectionRange(len, len);
+        }
+      },
+      onContactInput: (e) => {
+        const el = (e && e.target) || document.getElementById('lead-contact');
+        if (el) {
+          const val = el.value;
+          if (!val) {
+            el.value = '@';
+          } else if (!val.startsWith('@') && !val.startsWith('+') && !val.includes('@')) {
+            el.value = '@' + val;
+          }
+        }
+        if (this.state && this.state.contactError) {
+          this.setState({ contactError: '' });
+        }
+      },
+      openApply: () => { const u = 'https://calendly.com/v-s-golubev/marketfit14'; if (window.Calendly) window.Calendly.initPopupWidget({ url: u }); else window.open(u, '_blank', 'noopener'); },
+      closeApply: () => this.setState({ open: false, contactError: '', sendError: '' }),
+      submit: () => this.handleSubmit(),
+      faq: [
+        { q: 'Why do you not work with very early startups?', a: 'Our approach relies on real data about users and revenue. Without data, recommendations would be built on guesses rather than analysis. Get your first users first.' },
+        { q: 'Is the diagnostic call really free?', a: 'Yes. For 20 minutes we discuss your metrics, find the bottleneck and give you a couple of ideas on what to change. At the end we suggest a format for further work, the decision is yours.' },
+        { q: 'How do I pay for the paid formats?', a: 'We agree on the format during the diagnostic call. You can pay by card, bank transfer or an invoice to your company, whichever is easier.' },
+        { q: 'Can I get a refund?', a: 'A consultation rarely needs a refund since the format is short. For the $600 product and growth plan analysis there is a 100% refund within 7 days if we could not find the problem and ways to solve it.' },
+        { q: 'How much of my time will it take?', a: 'For a consultation: 15 minutes for the form and an hour for the call. For the product and growth plan analysis: 30-40 minutes to prepare materials, 2 hours of calls and 1 hour to go through the results. We do the rest.' },
+        { q: 'My case is unusual, will this work for me?', a: 'Over 10 years we have worked with SaaS, marketplaces, EdTech, AI, B2B, B2C and the public sector. Most likely we have seen a similar case. If we see from your description that it is not our profile, we will tell you before you pay.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
