@@ -50,6 +50,7 @@ if(/consult/.test(location.hash)||/[?&]apply=1/.test(location.search)){location.
 .gmf-burger>summary span:before{position:absolute;top:-6px}.gmf-burger>summary span:after{position:absolute;top:6px}
 .gmf-nav summary:focus-visible,.gmf-links>a:focus-visible{outline:2px solid var(--blue-500);outline-offset:2px;border-radius:4px}
 @media (max-width:760px){.gmf-links{display:none}.gmf-burger{display:block}.gmf-nav{gap:var(--sp-3)}}
+@media (max-width:400px){.gmf-nav{gap:4px}}
 </style>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.gmf-nav details[open]').forEach(function(d){d.removeAttribute('open')})});</script>

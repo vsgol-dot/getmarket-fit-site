@@ -10,14 +10,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Удержание пользователей: что это, метрики и как считать">
 <meta property="og:description" content="Удержание пользователей: что это, какие метрики считать (retention, churn, D1/D7/D30, NRR) и что делать стартапу, пока данных мало.">
-<meta property="og:url" content="https://getmarket.fit/blog/uderzhanie-polzovatelej/"><meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://getmarket.fit/blog/uderzhanie-polzovatelej/"><meta name="twitter:card" content="summary_large_image">
 <meta property="article:published_time" content="2026-11-13">
 <meta property="article:modified_time" content="2026-11-13">
 <meta property="article:author" content="https://getmarket.fit/about/victor-golubev/">
 <link rel="alternate" type="text/markdown" href="/blog/uderzhanie-polzovatelej/index.md">
-<meta name="yandex-verification" content="3e13cbe8ddd20a41"><link rel="preload" href="/blog/static/fonts/geologica-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:image" content="https://getmarket.fit/blog/img/uderzhanie-polzovatelej.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Удержание считают от первого ценного действия, а до него чинят активацию и оплату"><meta name="yandex-verification" content="3e13cbe8ddd20a41"><link rel="preload" href="/blog/static/fonts/geologica-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/blog/static/fonts/literata-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/blog/static/blog.css?v=848dc02cff">
+<link rel="stylesheet" href="/blog/static/blog.css?v=f5afbe6304">
 <link rel="alternate" type="application/rss+xml" title="Блог getmarket.fit" href="/blog/feed.xml"><script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -88,6 +90,7 @@
     "@id": "https://getmarket.fit/#org"
    },
    "wordCount": 3271,
+   "image": "https://getmarket.fit/blog/img/uderzhanie-polzovatelej.png",
    "keywords": "удержание пользователей"
   },
   {
@@ -154,7 +157,7 @@
       </nav>
       <a class="btn btn-sm" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Экспресс-диагностика</a>
       <details class="burger"><summary aria-label="Меню"><span></span></summary>
-        <div class="menu"><a href="/blog/">Блог</a><div class="sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
+        <div class="menu"><a class="menu-cta" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Экспресс-диагностика</a><a href="/blog/">Блог</a><div class="sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
       </details>
     </div>
   </div>
@@ -177,7 +180,7 @@
       <div class="tldr-label">Коротко</div>
       <p>Удержание пользователей - это доля людей, которые продолжают пользоваться продуктом через заданный период после первого ценного действия. Его считают через Day-N retention (D1, D7, D30) и отток, а в подписке через CRR, GRR и NRR. На раннем этапе сначала чинят активацию и оплату, и только потом удержание.</p>
     </section>
-    <details class="toc" open>
+<figure class="post-chart"><img src="/blog/img/uderzhanie-polzovatelej.png" alt="Удержание считают от первого ценного действия, а до него чинят активацию и оплату" width="1200" height="630" loading="eager"></figure>    <details class="toc" open>
       <summary>Содержание</summary>
       <ol><li><a href="#chto-takoe-uderzhanie-polzovateley-i-chem-ono-otlichaetsya-o">Что такое удержание пользователей и чем оно отличается от удержания клиентов?</a></li><li><a href="#kak-schitat-metriku-uderzhaniya-polzovateley-formuly-retenti">Как считать метрику удержания пользователей: формулы retention rate и churn?</a></li><li><a href="#chto-schitat-vozvrascheniem-i-aktivatsiey-chtoby-metrika-ne">Что считать возвращением и активацией, чтобы метрика не врала?</a></li><li><a href="#kakie-metriki-uderzhaniya-klientov-schitat-v-b2b-i-podpiske">Какие метрики удержания клиентов считать в B2B и подписке: GRR, NRR, когорты?</a></li><li><a href="#kakoe-uderzhanie-schitaetsya-normalnym">Какое удержание считается нормальным?</a></li><li><a href="#kogda-uderzhanie-schitat-rano-i-na-chto-smotret-vmesto-nego">Когда удержание считать рано и на что смотреть вместо него?</a></li><li><a href="#pochemu-polzovateli-uhodyat-bystraya-pobeda-ozhidaniya-i-raz">Почему пользователи уходят: быстрая победа, ожидания и разовые продукты?</a></li><li><a href="#kak-povysit-uderzhanie-polzovateley-prakticheskie-metody">Как повысить удержание пользователей: практические методы?</a></li><li><a href="#kakie-oshibki-delayut-startapy-pri-rabote-s-uderzhaniem">Какие ошибки делают стартапы при работе с удержанием?</a></li><li><a href="#faq">Частые вопросы</a></li></ol>
     </details>

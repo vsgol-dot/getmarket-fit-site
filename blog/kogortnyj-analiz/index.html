@@ -10,14 +10,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Когортный анализ: что это, как построить и читать retention">
 <meta property="og:description" content="Когортный анализ простыми словами: что это, виды когорт, как построить таблицу retention в Метрике и Excel, как читать её стартапу на малой выборке.">
-<meta property="og:url" content="https://getmarket.fit/blog/kogortnyj-analiz/"><meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://getmarket.fit/blog/kogortnyj-analiz/"><meta name="twitter:card" content="summary_large_image">
 <meta property="article:published_time" content="2026-11-07">
 <meta property="article:modified_time" content="2026-11-07">
 <meta property="article:author" content="https://getmarket.fit/about/victor-golubev/">
 <link rel="alternate" type="text/markdown" href="/blog/kogortnyj-analiz/index.md">
-<meta name="yandex-verification" content="3e13cbe8ddd20a41"><link rel="preload" href="/blog/static/fonts/geologica-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:image" content="https://getmarket.fit/blog/img/kogortnyj-analiz.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Среднее скрывает отток новичков, поэтому когорты считайте от первого ценного действия"><meta name="yandex-verification" content="3e13cbe8ddd20a41"><link rel="preload" href="/blog/static/fonts/geologica-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/blog/static/fonts/literata-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/blog/static/blog.css?v=848dc02cff">
+<link rel="stylesheet" href="/blog/static/blog.css?v=f5afbe6304">
 <link rel="alternate" type="application/rss+xml" title="Блог getmarket.fit" href="/blog/feed.xml"><script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -88,6 +90,7 @@
     "@id": "https://getmarket.fit/#org"
    },
    "wordCount": 2592,
+   "image": "https://getmarket.fit/blog/img/kogortnyj-analiz.png",
    "keywords": "когортный анализ"
   },
   {
@@ -154,7 +157,7 @@
       </nav>
       <a class="btn btn-sm" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Экспресс-диагностика</a>
       <details class="burger"><summary aria-label="Меню"><span></span></summary>
-        <div class="menu"><a href="/blog/">Блог</a><div class="sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
+        <div class="menu"><a class="menu-cta" href="https://calendar.app.google/DZBxhLjkDBSUq25a7" target="_blank" rel="noopener" data-goal="consult">Экспресс-диагностика</a><a href="/blog/">Блог</a><div class="sep"></div><a href="/instrumenty/audit-lendinga/">Бесплатный аудит лендинга</a><a href="/instrumenty/kalkulyator-yunit-ekonomiki/">Калькулятор юнит-экономики</a></div>
       </details>
     </div>
   </div>
@@ -177,7 +180,7 @@
       <div class="tldr-label">Коротко</div>
       <p>Когортный анализ - это способ следить за группами пользователей, которые пришли в одно время или сделали одно действие, и смотреть, сколько из них остаётся через день, неделю, месяц. Он показывает то, что прячет среднее по базе: новые пользователи могут уходить быстрее старых. Считать когорту лучше от первого ценного действия, а не от регистрации.</p>
     </section>
-    <details class="toc" open>
+<figure class="post-chart"><img src="/blog/img/kogortnyj-analiz.png" alt="Среднее скрывает отток новичков, поэтому когорты считайте от первого ценного действия" width="1200" height="630" loading="eager"></figure>    <details class="toc" open>
       <summary>Содержание</summary>
       <ol><li><a href="#chto-takoe-kogortnyy-analiz-prostymi-slovami">Что такое когортный анализ простыми словами?</a></li><li><a href="#kakie-byvayut-kogorty-i-kakuyu-vybrat">Какие бывают когорты и какую выбрать?</a></li><li><a href="#kak-postroit-kogortnuyu-tablitsu-retention-po-shagam">Как построить когортную таблицу retention по шагам?</a></li><li><a href="#kak-sdelat-kogortnyy-analiz-v-yandeks-metrike">Как сделать когортный анализ в Яндекс Метрике?</a></li><li><a href="#kak-chitat-kogortnuyu-tablitsu-i-chto-schitat-normoy">Как читать когортную таблицу и что считать нормой?</a></li><li><a href="#chto-delat-esli-klientov-10-50-i-statistiki-net">Что делать, если клиентов 10-50 и статистики нет?</a></li><li><a href="#chto-pokazyvaet-kogortnyy-analiz-pro-aktivatsiyu">Что показывает когортный анализ про активацию?</a></li><li><a href="#kogda-kogortnyy-analiz-vvodit-v-zabluzhdenie">Когда когортный анализ вводит в заблуждение?</a></li><li><a href="#kakie-resheniya-prinimat-po-rezultatam-analiza">Какие решения принимать по результатам анализа?</a></li><li><a href="#kakie-oshibki-chasche-vsego-portyat-kogortnyy-analiz">Какие ошибки чаще всего портят когортный анализ?</a></li><li><a href="#faq">Частые вопросы</a></li></ol>
     </details>
